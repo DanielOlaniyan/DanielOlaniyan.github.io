@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pilot-Scale Microwave Processing · Daniel Olaniyan</title>
+  <meta name="description" content="Bench-to-pilot scale-up of microwave dewatering at Sepro Mineral Systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1><a href="../index.html#home">Daniel Olaniyan</a></h1>
+    <p class="subtitle">Chemical Engineer (BASc, UBC) · EIT · Vancouver, BC</p>
+    <nav class="tabs">
+      <a href="../index.html#home">Home</a>
+      <a class="active" href="../index.html#projects">Projects</a>
+      <a href="../index.html#education">Education and Certifications</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back" href="../index.html#projects">← All projects</a>
+
+  <article>
+    <h2 class="p-title">Pilot-Scale Microwave Processing</h2>
+    <p class="muted">Scaling microwave dewatering of mineral feeds from a 3.2 kW bench unit to a 140 kW conveyorized pilot system.</p>
+
+    <ul class="p-facts">
+      <li><span>Organization</span><span>Sepro Mineral Systems (16-month co-op)</span></li>
+      <li><span>Role</span><span><span class="todo">[Title]</span></span></li>
+      <li><span>Tools</span><span>Allen-Bradley HMI, Excel</span></li>
+      <li><span>Output</span><span>Acknowledged in <em>Minerals Engineering</em> (2026)</span></li>
+    </ul>
+
+    <p class="outcome"><strong>Outcome:</strong> specific microwave energy input fell 62.7% from bench to pilot scale, with up to 24% moisture removed at pilot scale.</p>
+
+    <figure>
+      <img src="../assets/media/sepro/hmi-120kw-run.jpg" data-zoom alt="Allen-Bradley HMI during a 120 kW pilot run.">
+      <figcaption>Pilot run at 120 kW (2 × 60 kW generators) on the 140 kW system: live forward and reflected power, belt speed and cumulative energy input.</figcaption>
+    </figure>
+
+    <h2>My role</h2>
+    <ul>
+      <li>Operated the 140 kW pilot microwave system through its Allen-Bradley HMI: set forward power, monitored process response and responded to abnormal operating conditions.</li>
+      <li>Analyzed moisture removal, power input, residence time and scale-up behaviour in Excel, including regression and power-density calculations for the bench-scale data.</li>
+      <li><span class="todo">[Test planning, sample prep, reporting: add what you specifically did]</span></li>
+    </ul>
+
+    <h2>Problem</h2>
+    <p>Wet mineral feeds carry water that has to be transported and then evaporated downstream. Microwaves heat moisture throughout the material rather than from the surface in, which makes them attractive for dewatering. But bench-scale results don't transfer directly to a pilot system: frequency, energy dose, absorbed power and arcing risk all change with scale.</p>
+
+    <h2>Approach</h2>
+    <ol>
+      <li><strong>Bench scale:</strong> batch trials on a 3.2 kW, 2450 MHz unit to map mass loss against specific energy input.</li>
+      <li><strong>Pilot scale:</strong> a 140 kW, 915 MHz conveyorized system, varying generator power and belt speed.</li>
+      <li><strong>Scale-up analysis:</strong> compared specific energy (kWh/t) and moisture removal across scales.</li>
+    </ol>
+
+    <h2>Results</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Bench</th><th>Pilot</th></tr></thead>
+        <tbody>
+          <tr><td>Frequency / power</td><td>2450 MHz / 3.2 kW</td><td>915 MHz / 140 kW <span class="todo">[paper lists 150]</span></td></tr>
+          <tr><td>Specific energy input</td><td>~1,068 kWh/t</td><td>~397 kWh/t</td></tr>
+          <tr><td>Mass / moisture removed</td><td>up to 31%</td><td>up to 24%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Specific energy input fell 62.7% from bench to pilot. Separately, calcium fluoride drying trials achieved a 15% energy reduction.</p>
+
+    <h2>Abnormal conditions</h2>
+    <figure>
+      <img src="../assets/media/sepro/hmi-arc-shutdown.jpg" data-zoom alt="HMI after arc-detection shutdown: arc count 5, generators in cooling.">
+      <figcaption>Arc count reached 5 and the system went to a safe shutdown, with both generators in cooling.</figcaption>
+    </figure>
+    <p>During one 120 kW run, reflected power on Generator 2 climbed to about 31 kW and the arc detectors logged five arc events before the interlock shut the system down. Rising reflected power usually means the load's dielectric properties are changing as it dries. That creates an impedance mismatch, sends energy back toward the generator and raises the risk of arcing. <span class="todo">[What you did next]</span></p>
+
+    <h2>Documentation</h2>
+    <p class="muted">Click an image to enlarge.</p>
+    <div class="doc-grid">
+      <div class="doc">
+        <div class="thumb"><img src="../assets/media/sepro/nodules-bench.jpg" data-zoom alt="Polymetallic nodules after bench-scale microwave treatment, with ruler for scale."></div>
+        <p class="cap"><span class="type">Photo:</span> nodules after bench-scale treatment, fractured by rapid internal steam generation.</p>
+      </div>
+      <div class="doc">
+        <div class="thumb"><span class="ph">Add: regression plot from bench-scale workbook</span></div>
+        <p class="cap"><span class="type">Analysis:</span> mass loss vs. specific energy input.</p>
+      </div>
+      <div class="doc">
+        <div class="thumb"><span class="ph">Add: power density sample calculation</span></div>
+        <p class="cap"><span class="type">Sample calc:</span> power density and specific energy.</p>
+      </div>
+      <div class="doc">
+        <div class="thumb"><span class="ph">Add: kimberlite pilot photo (if cleared)</span></div>
+        <p class="cap"><span class="type">Photo:</span> kimberlite ore on the pilot conveyor. <span class="todo">[purpose of trial]</span></p>
+      </div>
+    </div>
+
+    <h2>Publication and media</h2>
+    <ul class="refs">
+      <li>Marzoughi, O., Forster, J., Donald, J., and Pickles, C.A. (2026). Microwave dewatering of deep-sea polymetallic nodules: Bench-scale and pilot-scale studies. <em>Minerals Engineering</em>, 235, 109879. <a href="https://doi.org/10.1016/j.mineng.2025.109879">doi.org/10.1016/j.mineng.2025.109879</a></li>
+      <li><a href="https://drive.google.com/file/d/11-HhcpYalRFOzvjBoq9K0dbiG7T5raN9/view">Pilot run video, HMI control</a> <span class="todo">[set Drive sharing once cleared]</span></li>
+    </ul>
+
+    <h2>What I'd do differently</h2>
+    <p><span class="todo">[One or two honest lines.]</span></p>
+
+    <p class="note">Proprietary Sepro data and client information are not included. Figures shown are from published work or cleared for sharing.</p>
+  </article>
+</main>
+
+<footer><div class="wrap">© <span data-year></span> Daniel Olaniyan</div></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
