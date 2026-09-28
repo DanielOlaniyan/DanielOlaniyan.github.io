@@ -16,7 +16,7 @@ assets/Daniel_Olaniyan_Resume.pdf   (add later for the Résumé tab)
 - **Change text:** edit the HTML file directly on GitHub (pencil icon) and commit. The site updates in about a minute.
 - **Add a project:** copy `projects/sepro-microwave.html`, rename it, replace the content, then in `index.html` link the project's title to the new page and swap "Write-up in progress" for a "Read more →" link.
 - **Add a photo or scanned calc:** put the image in `assets/media/<project>/`, then use `<img src="../assets/media/<project>/file.jpg" data-zoom alt="caption">`. `data-zoom` makes it clickable.
-- **Draft markers:** anything wrapped in `<span class="todo">` shows up red. Search for `class="todo"` and clear them all before sharing the link.
+- **Draft markers:** `<span class="todo">` shows text in red on the site. Unfinished bits that should stay hidden are kept as `<!-- TODO ... -->` comments; search for `TODO` to find them.
 - **Change colours or fonts:** edit the values under `:root` at the top of `assets/styles.css`.
 - **Add a tab:** add a link in the `<nav class="tabs">` block and a matching `<section class="panel" id="...">` (a Résumé tab is already stubbed out in a comment).
 
