@@ -4,130 +4,155 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel Olaniyan</title>
-  <meta name="description" content="Daniel Olaniyan, chemical engineer (BASc, UBC) and EIT. Projects, experience and education.">
+  <meta name="description" content="Daniel Olaniyan, chemical engineer (BASc, UBC) and EIT. Experience, projects and education.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <h1><a href="#home">Daniel Olaniyan</a></h1>
-    <p class="subtitle">Chemical Engineer (BASc, UBC) · EIT · Vancouver, BC</p>
-    <p class="contact-line">
-      <a href="mailto:[your-email]">Email</a><a href="https://www.linkedin.com/in/[your-handle]">LinkedIn</a><a href="https://github.com/DanielOlaniyan">GitHub</a>
-    </p>
+    <h1 class="site-title"><a href="#home">Daniel Olaniyan</a></h1>
     <nav class="tabs">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
-      <a href="#education">Education and Certifications</a>
-      <!-- <a href="#resume">Résumé</a> -->
+      <a href="#education">Education</a>
+      <!-- <a class="plain" href="assets/Daniel_Olaniyan_Resume.pdf" target="_blank">Résumé ↗</a> -->
     </nav>
   </div>
 </header>
 
 <main class="wrap">
 
-  <!-- ================= HOME ================= -->
-  <section class="panel" id="home">
-    <p>I'm a chemical engineer who has worked on both sides of a process decision: running and scaling up pilot-scale mineral-processing tests at Sepro Mineral Systems, and building the cost models that decide whether a plant gets built. <span class="todo">[Rewrite in your own voice.]</span></p>
+  <!-- ======================== HOME ======================== -->
+  <section class="panel" id="home" data-title="Daniel Olaniyan">
+    <p class="intro">I'm a UBC Chemical Engineering graduate and EIT who likes the point where engineering meets economics: running pilot-scale tests, scaling processes up and building the models that decide whether a plant gets built. <span class="todo">[Rewrite in your own voice.]</span></p>
 
-    <h2>Experience</h2>
-
-    <div class="entry">
-      <div class="entry-head"><h3>Sepro Mineral Systems</h3><span class="entry-date"><span class="todo">[Start – End]</span></span></div>
-      <p class="entry-sub"><span class="todo">[Exact title]</span> · Langley, BC · 16-month co-op</p>
-      <ul>
-        <li>Ran bench- and pilot-scale microwave dewatering trials, operating a 140 kW conveyorized system through its Allen-Bradley HMI.</li>
-        <li>Analyzed moisture removal, power input and scale-up behaviour in Excel, contributing to a 62.7% reduction in specific microwave energy input from bench to pilot.</li>
-        <li>Achieved a 15% energy reduction in calcium fluoride drying; acknowledged in <em>Minerals Engineering</em> (2026).</li>
-      </ul>
+    <!-- Experience: click the expand icon to show bullet points -->
+    <div class="card">
+      <div class="card-head">
+        <span class="label">Experience</span>
+        <button class="expand" aria-label="Show details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></button>
+      </div>
+      <div class="roles">
+        <div class="role"><h3><span class="todo">[Your title]</span></h3><div class="at">@ Sepro Mineral Systems</div></div>
+        <div class="role"><h3><span class="todo">[Your title]</span></h3><div class="at">@ ALS Global</div></div>
+      </div>
+      <div class="details">
+        <h4>Sepro Mineral Systems <span><span class="todo">[dates]</span> · 16 months</span></h4>
+        <ul>
+          <li>Ran bench- and pilot-scale microwave dewatering trials, operating a 140 kW conveyorized system through its Allen-Bradley HMI.</li>
+          <li>Analyzed moisture removal, power input and scale-up behaviour in Excel, contributing to a 62.7% reduction in specific microwave energy input from bench to pilot.</li>
+          <li>Achieved a 15% energy reduction in calcium fluoride drying; acknowledged in <em>Minerals Engineering</em> (2026).</li>
+        </ul>
+        <h4>ALS Global <span><span class="todo">[dates]</span></span></h4>
+        <ul>
+          <li>Ran high-throughput inorganic carbon analysis in an ISO-accredited laboratory. <span class="todo">[Paste your finalized ALS bullets.]</span></li>
+          <li>Held sign-off authorization on results as a co-op student.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="entry">
-      <div class="entry-head"><h3>ALS Global</h3><span class="entry-date"><span class="todo">[Start – End]</span></span></div>
-      <p class="entry-sub"><span class="todo">[Exact title] · [City]</span></p>
-      <ul>
-        <li>Ran high-throughput inorganic carbon analysis in an ISO-accredited laboratory. <span class="todo">[Paste your finalized ALS bullets.]</span></li>
-        <li>Held sign-off authorization on results as a co-op student.</li>
-      </ul>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head"><span class="label">Skills</span></div>
+        <div class="tags">
+          <span class="tag">Scale-up</span><span class="tag">Mass and energy balances</span><span class="tag">PFDs / P&amp;IDs</span>
+          <span class="tag">Equipment sizing</span><span class="tag">Separations</span><span class="tag">Mineral processing</span>
+          <span class="tag">Techno-economics</span><span class="tag">DCF modelling</span><span class="tag">HAZOP</span><span class="tag">LCA</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><span class="label">Tools</span></div>
+        <div class="tags">
+          <span class="tag">Excel</span><span class="tag">Google Sheets</span><span class="tag">Aspen Plus</span>
+          <span class="tag">Allen-Bradley HMI</span><span class="tag">PowerPoint</span><span class="tag">Word</span>
+        </div>
+      </div>
     </div>
 
-    <h2>Skills and Tools</h2>
-    <dl class="skills">
-      <div><dt>Process engineering</dt><dd>Scale-up, mass and energy balances, PFDs and P&amp;IDs, equipment sizing, separations, mineral processing, dewatering</dd></div>
-      <div><dt>Economics</dt><dd>Techno-economic analysis, DCF modelling, CAPEX/OPEX estimation, sensitivity analysis, life-cycle assessment</dd></div>
-      <div><dt>Operations and lab</dt><dd>Pilot plant operation, HMI/process control, HAZOP and process safety, ISO-accredited lab work</dd></div>
-      <div><dt>Software</dt><dd>Excel, Google Sheets, Aspen Plus, Allen-Bradley HMI, PowerPoint, Word</dd></div>
-    </dl>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section class="panel" id="projects">
-    <div class="project">
-      <h3><a href="projects/sepro-microwave.html">Pilot-Scale Microwave Processing</a></h3>
-      <p class="meta">Sepro Mineral Systems · Co-op</p>
+    <div class="card">
+      <div class="card-head">
+        <span class="label">Featured project</span>
+        <a class="expand" href="projects/sepro-microwave.html" aria-label="Open project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></a>
+      </div>
+      <h2 style="font-size:22px;margin-bottom:10px">Pilot-Scale Microwave Processing</h2>
       <p>Scaled microwave dewatering from a 3.2 kW bench unit to a 140 kW pilot system, cutting specific energy input by 62.7%.</p>
-      <a href="projects/sepro-microwave.html">Read more →</a>
-    </div>
-
-    <div class="project">
-      <h3>Montbretin A Production-Scale Process Design</h3>
-      <p class="meta">UBC · Capstone</p>
-      <p>Led the plant economic model; moved fill-and-finish out of scope to reach a 17% real IRR.</p>
-      <span class="status">Write-up in progress</span>
-    </div>
-
-    <div class="project">
-      <h3>CCU Feasibility for Carbon-Negative Methanol</h3>
-      <p class="meta">UBC · CHBE 488</p>
-      <p>Assessed Twelve's CO₂-to-fuels technology at Lafarge cement plants: life-cycle assessment, systems mapping and techno-economics.</p>
-      <span class="status">Write-up in progress</span>
-    </div>
-
-    <div class="project">
-      <h3>Binary Plate Distillation Column Optimization</h3>
-      <p class="meta">UBC · CHBE 464</p>
-      <p>Four days of column runs compared against Aspen Plus simulations. <span class="todo">[Result]</span></p>
-      <span class="status">Write-up in progress</span>
-    </div>
-
-    <div class="project">
-      <h3>Phase Zero: Engineering Economics</h3>
-      <p class="meta">UBC · CHBE 459</p>
-      <p>Built the financial model and 6 of 10 pitch slides for a wellness-facility venture. <span class="todo">[Result]</span></p>
-      <span class="status">Write-up in progress</span>
+      <span class="stack">Sepro Mineral Systems · Allen-Bradley HMI · Excel</span>
     </div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
-  <section class="panel" id="education">
-    <h2>Education</h2>
-    <div class="entry">
-      <div class="entry-head"><h3>University of British Columbia</h3><span class="entry-date"><span class="todo">[Years]</span></span></div>
-      <p class="entry-sub">BASc, Chemical and Biological Engineering · Vancouver, BC</p>
-      <ul>
-        <li>Capstone: production-scale process design for Montbretin A (economic model lead).</li>
-        <li><span class="todo">[GPA, awards or relevant courses, if you want them here]</span></li>
-      </ul>
+  <!-- ======================== PROJECTS ======================== -->
+  <section class="panel" id="projects" data-title="Projects">
+
+    <div class="card project">
+      <div class="card-head">
+        <span class="label case">Pilot-Scale Microwave Processing</span>
+        <a class="expand" href="projects/sepro-microwave.html" aria-label="Open project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></a>
+      </div>
+      <p>Scaled microwave dewatering of mineral feeds from a 3.2 kW bench unit to a 140 kW pilot system, cutting specific energy input by 62.7%. Operated the pilot line through its Allen-Bradley HMI.</p>
+      <span class="stack">Sepro Mineral Systems · Allen-Bradley HMI · Excel</span>
     </div>
 
-    <h2>Certifications</h2>
-    <div class="entry">
-      <div class="entry-head"><h3>Engineer-in-Training (EIT)</h3><span class="entry-date"><span class="todo">[Year]</span></span></div>
-      <p class="entry-sub">Engineers and Geoscientists BC</p>
+    <div class="card project">
+      <div class="card-head"><span class="label case">Montbretin A Production-Scale Process Design</span><span class="soon">Write-up soon</span></div>
+      <p>Capstone plant design. Led the economic model (CAPEX, OPEX, revenue, depreciation, sensitivity) and moved fill-and-finish out of scope to reach a 17% real IRR.</p>
+      <span class="stack">UBC Capstone · Excel · Process design</span>
     </div>
-    <div class="entry">
-      <div class="entry-head"><h3>Fundamentals of Engineering (FE), Chemical</h3><span class="entry-date"><span class="todo">[Year]</span></span></div>
-      <p class="entry-sub">NCEES · Passed on first attempt</p>
+
+    <div class="card project">
+      <div class="card-head"><span class="label case">CCU Feasibility for Carbon-Negative Methanol</span><span class="soon">Write-up soon</span></div>
+      <p>Assessed Twelve's CO₂-to-fuels technology at Lafarge cement plants through life-cycle assessment, systems mapping and techno-economics.</p>
+      <span class="stack">UBC CHBE 488 · LCA · Techno-economics</span>
+    </div>
+
+    <div class="card project">
+      <div class="card-head"><span class="label case">Binary Plate Distillation Column Optimization</span><span class="soon">Write-up soon</span></div>
+      <p>Four days of column runs compared against Aspen Plus simulations. <span class="todo">[Result]</span></p>
+      <span class="stack">UBC CHBE 464 · Aspen Plus · Separations</span>
+    </div>
+
+    <div class="card project">
+      <div class="card-head"><span class="label case">Phase Zero: Engineering Economics</span><span class="soon">Write-up soon</span></div>
+      <p>Built the financial model and 6 of 10 pitch slides for a wellness-facility venture. <span class="todo">[Result]</span></p>
+      <span class="stack">UBC CHBE 459 · Google Sheets · Financial modelling</span>
+    </div>
+  </section>
+
+  <!-- ======================== EDUCATION ======================== -->
+  <section class="panel" id="education" data-title="Education">
+    <div class="card">
+      <div class="card-head"><span class="label">Education</span></div>
+      <div class="entry">
+        <div class="entry-head"><h3>University of British Columbia</h3><span class="date"><span class="todo">[Years]</span></span></div>
+        <p class="sub">BASc, Chemical and Biological Engineering</p>
+        <ul>
+          <li>Capstone: production-scale process design for Montbretin A (economic model lead).</li>
+          <li><span class="todo">[GPA, awards or relevant courses, if you want them here]</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="label">Certifications</span></div>
+      <div class="entry">
+        <div class="entry-head"><h3>Engineer-in-Training (EIT)</h3><span class="date"><span class="todo">[Year]</span></span></div>
+        <p class="sub">Engineers and Geoscientists BC</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><h3>Fundamentals of Engineering (FE), Chemical</h3><span class="date"><span class="todo">[Year]</span></span></div>
+        <p class="sub">NCEES · Passed on first attempt</p>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer><div class="wrap">© <span data-year></span> Daniel Olaniyan</div></footer>
+<footer><div class="wrap">
+  <a href="mailto:[your-email]">Email</a> · <a href="https://www.linkedin.com/in/[your-handle]">LinkedIn</a> · <a href="https://github.com/DanielOlaniyan">GitHub</a>
+</div></footer>
 <script src="assets/main.js"></script>
 </body>
 </html>

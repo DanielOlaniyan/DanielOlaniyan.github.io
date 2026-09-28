@@ -7,7 +7,7 @@ Personal site: plain HTML, CSS and JavaScript. No install or build step.
 index.html                    Name, contact links and tabs: Home (intro, experience, skills), Projects, Education and Certifications
 projects/sepro-microwave.html One page per project (copy this one to start a new project)
 assets/styles.css             All styling; colours are at the top under :root
-assets/main.js                Tab switching and image lightbox
+assets/main.js                Tab switching, expand buttons and image lightbox
 assets/media/<project>/       Images for each project
 assets/Daniel_Olaniyan_Resume.pdf   (add later for the Résumé tab)
 ```
