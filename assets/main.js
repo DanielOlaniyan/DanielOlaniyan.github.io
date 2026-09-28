@@ -16,23 +16,37 @@ if (panels.length) {
   show();
 }
 
-// Experience: click a role to open its bullets (one at a time).
-// The card's expand icon opens or closes all of them.
+// Experience card:
+//  - clicking a role opens a pop-up with just that role's bullets
+//  - the corner expand icon shows every role's bullets inline (click again to hide)
+const modal = document.getElementById('role-modal');
 document.querySelectorAll('.card.experience').forEach(card => {
-  const roles = [...card.querySelectorAll('.role')];
-  const detail = r => card.querySelector('#role-' + r.dataset.role);
-  const set = (r, open) => { r.setAttribute('aria-expanded', open); detail(r).classList.toggle('open', open); };
-  roles.forEach(r => r.addEventListener('click', () => {
-    const wasOpen = r.getAttribute('aria-expanded') === 'true';
-    roles.forEach(o => set(o, false));
-    if (!wasOpen) set(r, true);
+  const details = [...card.querySelectorAll('.role-detail')];
+
+  card.querySelectorAll('.role').forEach(role => role.addEventListener('click', () => {
+    const d = card.querySelector('#role-' + role.dataset.role);
+    if (!modal || !d) return;
+    modal.querySelector('#modal-kicker').textContent = d.querySelector('h4').firstChild.textContent.trim();
+    modal.querySelector('#modal-title').textContent = d.dataset.title || '';
+    modal.querySelector('#modal-when').textContent = d.dataset.when || '';
+    const body = modal.querySelector('#modal-body');
+    body.innerHTML = '';
+    [...d.children].filter(el => el.tagName !== 'H4').forEach(el => body.appendChild(el.cloneNode(true)));
+    modal.showModal();
   }));
+
   const all = card.querySelector('button.expand');
   if (all) all.addEventListener('click', () => {
-    const anyClosed = roles.some(r => r.getAttribute('aria-expanded') !== 'true');
-    roles.forEach(r => set(r, anyClosed));
+    const open = !card.classList.contains('show-all');
+    card.classList.toggle('show-all', open);
+    details.forEach(d => d.classList.toggle('open', open));
+    all.setAttribute('aria-expanded', open);
   });
 });
+if (modal) {
+  modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
+  modal.addEventListener('click', e => { if (e.target === modal) modal.close(); }); // click outside the box
+}
 
 // Lightbox: any <img data-zoom> opens full size, caption from alt text
 const box = document.createElement('div');

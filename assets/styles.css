@@ -95,15 +95,13 @@ main { padding-bottom: 72px; }
   padding: 14px 40px 14px 16px; border-radius: 10px;
   border: 1px solid var(--line); transition: background .15s, border-color .15s;
 }
-.role:hover { background: #10131a; border-color: #2a323e; }
+.role:hover { background: #10131a; border-color: var(--accent); }
 .role:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.role::after {                       /* + / – indicator */
-  content: "+"; position: absolute; right: 16px; top: 14px;
-  font-family: var(--mono); font-size: 18px; line-height: 1; color: var(--muted);
+.role::after {                       /* "open" arrow */
+  content: "↗"; position: absolute; right: 16px; top: 13px;
+  font-family: var(--mono); font-size: 15px; line-height: 1; color: var(--muted); transition: color .15s;
 }
-.role[aria-expanded="true"] { background: #10131a; border-color: var(--accent); }
-.role[aria-expanded="true"]::after { content: "–"; color: var(--accent); }
-.role[aria-expanded="true"] h3 { color: var(--accent); }
+.role:hover::after, .role:hover h3 { color: var(--accent); }
 .role h3 { font-family: var(--mono); font-size: 15px; font-weight: 700; transition: color .15s; }
 .role .at, .role .when { font-family: var(--mono); font-size: 14px; color: var(--muted); }
 .role .when { font-size: 13px; margin-top: 2px; }
@@ -115,6 +113,27 @@ main { padding-bottom: 72px; }
 .role-detail ul { margin: 0; padding-left: 18px; }
 .role-detail li { margin-bottom: 6px; }
 .more-link { display: inline-block; margin-top: 10px; font-family: var(--mono); font-size: 13px; letter-spacing: .04em; }
+.card.show-all .expand { color: var(--accent); }
+
+/* Pop-up (experience details) */
+.modal {
+  width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 48px); overflow: auto;
+  background: var(--card); color: var(--body); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px 30px 30px; box-shadow: 0 24px 80px rgba(0,0,0,.6);
+}
+.modal[open] { animation: pop .18s ease; }
+.modal::backdrop { background: rgba(3,5,8,.72); backdrop-filter: blur(3px); }
+.modal .label { margin: 0 0 12px; }
+.modal h2 { font-family: var(--mono); font-size: 20px; }
+.modal-when { font-family: var(--mono); font-size: 13px; color: var(--muted); margin: 6px 0 20px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.modal ul { margin: 0; padding-left: 18px; }
+.modal li { margin-bottom: 8px; }
+.modal-close {
+  position: absolute; top: 14px; right: 16px; background: none; border: 0; color: var(--muted);
+  font-size: 26px; line-height: 1; cursor: pointer; padding: 4px 8px;
+}
+.modal-close:hover { color: var(--text); }
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
 @keyframes fade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
 /* Skills / tools tags */
