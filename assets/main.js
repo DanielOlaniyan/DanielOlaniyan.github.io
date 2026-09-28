@@ -16,9 +16,23 @@ if (panels.length) {
   show();
 }
 
-// Expand buttons that toggle extra detail inside a card
-document.querySelectorAll('button.expand').forEach(btn =>
-  btn.addEventListener('click', () => btn.closest('.card').classList.toggle('open')));
+// Experience: click a role to open its bullets (one at a time).
+// The card's expand icon opens or closes all of them.
+document.querySelectorAll('.card.experience').forEach(card => {
+  const roles = [...card.querySelectorAll('.role')];
+  const detail = r => card.querySelector('#role-' + r.dataset.role);
+  const set = (r, open) => { r.setAttribute('aria-expanded', open); detail(r).classList.toggle('open', open); };
+  roles.forEach(r => r.addEventListener('click', () => {
+    const wasOpen = r.getAttribute('aria-expanded') === 'true';
+    roles.forEach(o => set(o, false));
+    if (!wasOpen) set(r, true);
+  }));
+  const all = card.querySelector('button.expand');
+  if (all) all.addEventListener('click', () => {
+    const anyClosed = roles.some(r => r.getAttribute('aria-expanded') !== 'true');
+    roles.forEach(r => set(r, anyClosed));
+  });
+});
 
 // Lightbox: any <img data-zoom> opens full size, caption from alt text
 const box = document.createElement('div');

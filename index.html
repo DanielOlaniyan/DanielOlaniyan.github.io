@@ -30,24 +30,39 @@
   <section class="panel" id="home" data-title="Daniel Olaniyan">
     <p class="intro">I'm a UBC Chemical Engineering graduate and EIT who likes the point where engineering meets economics: running pilot-scale tests, scaling processes up and building the models that decide whether a plant gets built.<!-- TODO: rewrite in your own voice --></p>
 
-    <!-- Experience: click the expand icon to show bullet points -->
-    <div class="card">
+    <!-- Experience: click a role to show its bullets; the expand icon opens all.
+         To add a role: copy one <button class="role"> and one <div class="role-detail">,
+         and give both the same id (data-role="x" / id="role-x"). -->
+    <div class="card experience">
       <div class="card-head">
         <span class="label">Experience</span>
-        <button class="expand" aria-label="Show details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></button>
+        <button class="expand" aria-label="Show all details" title="Show all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></button>
       </div>
       <div class="roles">
-        <div class="role"><h3>Metallurgical Engineering Co-op</h3><div class="at">@ Sepro Mineral Systems</div></div>
-        <div class="role"><h3>Laboratory Analyst</h3><div class="at">@ ALS Global</div></div>
+        <button class="role" data-role="sepro" aria-expanded="false">
+          <h3>Metallurgical Engineering Co-op</h3>
+          <div class="at">@ Sepro Mineral Systems</div>
+          <div class="when">Sept 2023 – Apr 2024</div>
+        </button>
+        <button class="role" data-role="als" aria-expanded="false">
+          <h3>Laboratory Analyst</h3>
+          <div class="at">@ ALS Global</div>
+          <div class="when">May 2022 – Aug 2022</div>
+        </button>
       </div>
-      <div class="details">
-        <h4>Sepro Mineral Systems <span>Sept 2023 – Apr 2024</span></h4>
+
+      <div class="role-detail" id="role-sepro">
+        <h4>Sepro Mineral Systems <span>Langley, BC</span></h4>
         <ul>
           <li>Ran bench- and pilot-scale microwave dewatering trials, operating a 140 kW conveyorized system through its Allen-Bradley HMI.</li>
           <li>Analyzed moisture removal, power input and scale-up behaviour in Excel, contributing to a 62.7% reduction in specific microwave energy input from bench to pilot.</li>
           <li>Achieved a 15% energy reduction in calcium fluoride drying; acknowledged in <em>Minerals Engineering</em> (2026).</li>
         </ul>
-        <h4>ALS Global <span>May 2022 – Aug 2022</span></h4>
+        <a class="more-link" href="projects/sepro-microwave.html">See the project →</a>
+      </div>
+
+      <div class="role-detail" id="role-als">
+        <h4>ALS Global</h4>
         <ul>
           <li>Ran high-throughput inorganic carbon analysis in an ISO-accredited laboratory.<!-- TODO: add finalized ALS bullets --></li>
           <li>Held sign-off authorization on results as a co-op student.</li>
