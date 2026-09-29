@@ -92,6 +92,7 @@ main { padding-bottom: 72px; }
 .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .role {
   all: unset; box-sizing: border-box; cursor: pointer; position: relative;
+  display: flex; flex-direction: column; justify-content: flex-start;
   padding: 14px 40px 14px 16px; border-radius: 10px;
   border: 1px solid var(--line); transition: background .15s, border-color .15s;
 }
