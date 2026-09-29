@@ -192,6 +192,15 @@ td.num { font-family: var(--mono); }
 
 .note { font-size: 13px; color: var(--muted); }
 
+/* Testimonials */
+.quotes { display: grid; gap: 28px; }
+.quote { margin: 0; padding-left: 18px; border-left: 2px solid var(--accent); }
+.quote blockquote { margin: 0 0 12px; color: var(--text); font-size: 17px; line-height: 1.6; }
+.quote figcaption { font-family: var(--mono); font-size: 13px; color: var(--text); margin: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.quote figcaption span { color: var(--muted); }
+.quote.small { margin: 20px 0 4px; }
+.quote.small blockquote { font-size: 15px; color: var(--body); }
+
 footer { padding: 0 0 40px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
 
 /* Lightbox */
