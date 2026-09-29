@@ -147,6 +147,7 @@ main { padding-bottom: 72px; }
 /* Project cards */
 .project p { margin-bottom: 18px; max-width: 680px; }
 .stack { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+a.soon { color: var(--accent); }
 .soon { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 
 /* Education entries */

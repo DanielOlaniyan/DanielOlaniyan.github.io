@@ -14,6 +14,8 @@ if (panels.length) {
   };
   window.addEventListener('hashchange', () => { show(); window.scrollTo(0, 0); });
   show();
+  // stop the browser jumping past the header when a page loads with #home / #projects etc.
+  if (location.hash) window.addEventListener('load', () => setTimeout(() => window.scrollTo(0, 0), 0));
 }
 
 // Experience card:
