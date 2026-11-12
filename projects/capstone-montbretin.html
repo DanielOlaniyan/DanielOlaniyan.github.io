@@ -48,7 +48,9 @@
     <div class="card-head"><span class="label">My role</span></div>
     <ul>
       <li><strong>Team coordinator.</strong> The role rotated weekly; after my week the team asked me to keep it for the whole project. I sent agendas ahead, wrote minutes detailed enough that anyone who missed a meeting could catch up, captured professor and sponsor feedback at reviews, and called the in-person work sessions that carried us through both semester deadlines.</li>
-      <li><strong>Heat-exchanger network (PFD 100):</strong> heat duties, log-mean temperature differences and exchanger areas for media and glucose sterilization, plus preliminary pump sizing.</li>
+      <li><strong>Heat-exchanger network (PFD 100):</strong> heat duties, log-mean temperature differences and exchanger areas for media and glucose sterilization.</li>
+      <li><strong>P&amp;ID:</strong> the sterile media and sterile glucose feed lines into the bioreactor, with their control loops and interlocks.</li>
+      <li><strong>Pipe and pump sizing</strong> for the plant.</li>
       <li><strong>Economics:</strong> built the economic model: capital estimate, operating costs, financed cash flow and IRR.</li>
       <li><strong>Biomass separation (PFD 400):</strong> PFD and material balances to complete solid-liquid separation of each 16 m³ fermentation batch within a 12-hour turnaround.</li>
     </ul>
@@ -92,6 +94,29 @@
       <li><strong>Staying liquid:</strong> P-101 raises the feed to 6 atm, well above the ~2.7 bar at which water boils at 130 °C.</li>
       <li>Shell-and-tube exchangers in 316L stainless steel. The two campaigns never run at once, so the network carries about 0.88 MW at any time.</li>
     </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">P&amp;ID: sterile feed lines</span><span class="soon">Click to enlarge</span></div>
+    <figure>
+      <img src="../assets/media/capstone/pid-sterile-feed-lines.png" data-zoom alt="P&amp;ID detail of the sterile glucose line BF-113 (3/4 inch stainless) with FT-106, FI-105, PI-104, AI-101 and analyzer controller AIC-101 driving AV-101, and the sterilized media line BF-111 (1-1/2 inch stainless) with FT-101, totalizer TOT-1 and FIC-103 driving FV-102.">
+      <figcaption>My section of the bioreactor P&amp;ID: the two sterile feeds from PFD 100 into fermenter R-301.</figcaption>
+    </figure>
+    <div class="grid-2">
+      <div>
+        <h3>Sterile media (BF-111)</h3>
+        <p>Charges a set volume, about 14 m³, at the start of each batch. FT-101 measures the flow; the totalizer TOT-1 counts the volume delivered, and FIC-103 controls the rate through FV-102, closing it when the preset is reached. Controlling the rate as well as the total keeps the fill steady and avoids overshooting the preset.</p>
+      </div>
+      <div>
+        <h3>Sterile glucose (BF-113)</h3>
+        <p>Feeds glucose through the fed-batch phases. An analyzer on the fermenter (AIC-101, with high and low alarms) moves AV-101 to hold broth glucose at setpoint, so the loop controls what the cells actually see rather than how much is pumped. FT-106 and FI-105 indicate flow, and PI-104 is a local gauge with its own isolation valve.</p>
+      </div>
+    </div>
+    <p>Both feed valves fail closed and carry interlocks: on a utility failure, nothing of uncertain sterility reaches the fermenter, and the vessel can't be overfilled or overfed. Each line has block valves either side of the instruments and drain valves for maintenance.</p>
+    <figure>
+      <img src="../assets/media/capstone/pid-bioreactor-r301.png" data-zoom alt="Full bioreactor P&amp;ID, drawing D-02-1001: fermenter R-301 with acid, base, antifoam, yeast, glucose, media and air feeds, coolant, waste gas, TFF filter F-301 and harvest pump P-304.">
+      <figcaption>Full bioreactor P&amp;ID (drawing D-02-1001, team drawing).</figcaption>
+    </figure>
   </div>
 
   <div class="card">

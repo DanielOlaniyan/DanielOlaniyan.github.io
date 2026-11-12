@@ -96,6 +96,9 @@ main { padding-bottom: 72px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 22px; }
 .grid-2 .card { margin-bottom: 0; }
 @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } .card { padding: 22px 20px 24px; } }
+.card .grid-2 { margin: 18px 0 16px; }
+.card .grid-2 h3 { font-size: 16px; margin-bottom: 6px; }
+.card .grid-2 p { margin: 0; }
 
 /* Experience: clickable roles, each opening its own bullet list */
 .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
