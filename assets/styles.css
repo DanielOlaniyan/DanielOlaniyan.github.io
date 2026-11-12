@@ -63,6 +63,8 @@ h1, h2, h3 { color: var(--text); margin: 0; line-height: 1.2; }
 .intro .ask { margin-top: 18px; color: var(--text); }
 .intro .ask a { font-family: var(--mono); font-size: 14px; white-space: nowrap; margin-left: 4px; }
 .fine { color: var(--muted); font-size: 13px; }
+ol.fine { margin: 10px 0 0; padding-left: 1.4em; }
+ol.fine li { margin: 2px 0; }
 
 /* ---------- Panels (tabs) ---------- */
 main { padding-bottom: 72px; }
