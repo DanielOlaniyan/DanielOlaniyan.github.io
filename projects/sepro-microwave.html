@@ -55,7 +55,7 @@
     <ul>
       <li>Operated the 140 kW pilot microwave system through its Allen-Bradley HMI: set forward power, monitored process response and responded to abnormal operating conditions.</li>
       <li>Analyzed moisture removal, power input, residence time and scale-up behaviour in Excel, including regression and power-density calculations for the bench-scale data.</li>
-      <!-- TODO: <li>Test planning, sample prep, reporting: what you specifically did</li> -->
+      <li>Planned and ran every bench-scale test: sample allocation, splitting, measurement and observation (details below).</li>
     </ul>
   </div>
 
@@ -75,18 +75,38 @@
   </div>
 
   <div class="card">
+    <div class="card-head"><span class="label">Sample prep and bench testing</span></div>
+    <ul>
+      <li><strong>Allocation:</strong> received 54.8 kg of sea nodules and set aside 4.8 kg (~8.8%) for bench-scale testing: 24 samples of 200 g each.</li>
+      <li><strong>Splitting:</strong> used a 24-container rotary splitter (one container per test sample), then a riffle splitter to finish allocating undersized and oversized particles.</li>
+      <li><strong>Measurements per test:</strong> initial and final mass, surface temperature (IR camera) and bulk temperature (type K thermocouple), plus photos and notes on arcing and steam release.</li>
+      <li><strong>Arcing on the first test:</strong> arcing started almost immediately, so I stopped the test, restarted it and ended the repeat trial 5 s earlier to confirm safe operation. Arcing was expected for this material.</li>
+    </ul>
+  </div>
+
+  <div class="card">
     <div class="card-head"><span class="label">Results</span></div>
     <div class="table-wrap">
       <table>
         <thead><tr><th></th><th>Bench</th><th>Pilot</th></tr></thead>
         <tbody>
-          <tr><td>Frequency / power</td><td class="num">2450 MHz / 3.2 kW</td><td class="num">915 MHz / 140 kW<!-- TODO: confirm 140 vs 150 kW (paper lists 150) --></td></tr>
+          <tr><td>Frequency / power</td><td class="num">2450 MHz / 3.2 kW</td><td class="num">915 MHz / 140 kW <span class="fine">(150 kW rated; 140 kW max user setting)</span></td></tr>
           <tr><td>Specific energy input</td><td class="num">~1,068 kWh/t</td><td class="num">~397 kWh/t</td></tr>
           <tr><td>Mass / moisture removed</td><td class="num">up to 31%</td><td class="num">up to 24%</td></tr>
         </tbody>
       </table>
     </div>
     <p>Specific energy input fell 62.7% from bench to pilot. Separately, calcium fluoride drying trials achieved a 15% energy reduction.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Generator discrepancy and recommendations</span></div>
+    <p>Analyzing absorbed microwave energy patterns in Excel, I found a 7.4% discrepancy between the pilot system's two water-cooled power generators. That led to three equipment recommendations:</p>
+    <ol>
+      <li><strong>Switch to solid-state RF generators</strong> in place of the magnetron tube generators.</li>
+      <li><strong>Install auto-tuners</strong> so impedance between the microwave source and the load is matched in real time as the material's properties change.</li>
+      <li><strong>Optimize the volume filling factor</strong> (cavity size relative to the load) when the system is redesigned, based on a thermodynamic analysis.</li>
+    </ol>
   </div>
 
   <div class="card">

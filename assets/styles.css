@@ -53,7 +53,16 @@ h1, h2, h3 { color: var(--text); margin: 0; line-height: 1.2; }
 .tabs a:hover { color: var(--text); text-decoration: none; }
 .tabs a.active { color: var(--accent); }
 
-.intro { font-size: 17px; max-width: 680px; margin: 0 0 28px; }
+.intro { font-size: 17px; max-width: 720px; margin: 0 0 32px; }
+.intro p { margin: 0 0 10px; }
+.intro .hook { color: var(--text); font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; }
+.proof { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 8px; }
+.proof li { padding-left: 16px; position: relative; font-size: 15px; }
+.proof li::before { content: ""; position: absolute; left: 0; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.proof b { color: var(--accent); font-family: var(--mono); font-weight: 700; }
+.intro .ask { margin-top: 18px; color: var(--text); }
+.intro .ask a { font-family: var(--mono); font-size: 14px; white-space: nowrap; margin-left: 4px; }
+.fine { color: var(--muted); font-size: 13px; }
 
 /* ---------- Panels (tabs) ---------- */
 main { padding-bottom: 72px; }
