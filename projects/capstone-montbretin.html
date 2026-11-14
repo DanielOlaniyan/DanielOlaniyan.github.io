@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Montbretin A Production-Scale Process Design · Daniel Olaniyan</title>
+  <meta name="description" content="UBC capstone: production-scale bioprocess design for Montbretin A, with heat integration and economics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1 class="site-title"><a href="../index.html#projects">Projects</a></h1>
+    <nav class="tabs">
+      <a href="../index.html#home">Home</a>
+      <a class="active" href="../index.html#projects">Projects</a>
+      <a href="../index.html#testimonials">Testimonials</a>
+      <a href="../index.html#education">Education</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back" href="../index.html#projects">← All projects</a>
+
+  <div class="card">
+    <div class="card-head"><span class="label case">Montbretin A Production-Scale Process Design</span></div>
+    <p>Production-scale design of a plant making Montbretin A (MbA), a potential type 2 diabetes therapeutic, from bioengineered <em>Saccharomyces cerevisiae</em> yeast.</p>
+    <dl class="facts">
+      <div><dt>Program</dt><dd>UBC Chemical and Biological Engineering capstone</dd></div>
+      <div><dt>Sponsor</dt><dd>UBC Michael Smith Laboratories</dd></div>
+      <div><dt>Team</dt><dd>7 students</dd></div>
+      <div><dt>Role</dt><dd>Team coordinator · Heat integration · Economics · Biomass separation</dd></div>
+      <div><dt>Tools</dt><dd>Excel</dd></div>
+    </dl>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Outcome</span></div>
+    <p class="outcome">A plant returning a <strong>17% real after-tax IRR</strong> on equity against <strong>$75.7M</strong> of fixed capital, with a heat-exchanger network handling <strong>1.74 MW</strong> of duty, about <strong>95%</strong> of it recovered internally.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">My role</span></div>
+    <ul>
+      <li><strong>Team coordinator.</strong> The role rotated weekly; after my week the team asked me to keep it for the whole project. I sent agendas ahead, wrote minutes detailed enough that anyone who missed a meeting could catch up, captured professor and sponsor feedback at reviews, and called the in-person work sessions that carried us through both semester deadlines.</li>
+      <li><strong>Heat-exchanger network (PFD 100):</strong> heat duties, log-mean temperature differences and exchanger areas for media and glucose sterilization.</li>
+      <li><strong>P&amp;ID:</strong> the sterile media and sterile glucose feed lines into the bioreactor, with their control loops and interlocks.</li>
+      <li><strong>Pipe and pump sizing</strong> for the plant.</li>
+      <li><strong>Economics:</strong> built the economic model: capital estimate, operating costs, financed cash flow and IRR.</li>
+      <li><strong>Biomass separation (PFD 400):</strong> PFD and material balances to complete solid-liquid separation of each 16 m³ fermentation batch within a 12-hour turnaround.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">The process</span></div>
+    <p>A greenfield plant in Montreal, Quebec. MbA builds up inside the yeast cells, so the biomass is the product stream. The plant runs in six areas:</p>
+    <ol>
+      <li><strong>Media sterilization (100):</strong> one heat-sterilization train serves both the start-up media (about 14 m³ in 2 hours) and the fed-batch glucose feed (about 21 t in 3 hours), each into its own sterile storage tank.</li>
+      <li><strong>Air filtration (200):</strong> sterile air for the fermenters.</li>
+      <li><strong>Fermentation (300):</strong> two 20 m³ fed-batch fermenters at 16 m³ working volume, on a 48-hour cycle (36 h fermentation, 2 h emptying, 10 h cleaning).</li>
+      <li><strong>Lysis and separation (400):</strong> centrifuge cell washing, high-pressure homogenization to release MbA, then filtration.</li>
+      <li><strong>Purification (500)</strong> and <strong>drying (600)</strong>.</li>
+    </ol>
+    <p>Output: about 11 kg of MbA per batch, 333 batches and roughly 3,700 kg a year, or about 74 million 50 mg doses.</p>
+    <figure>
+      <img src="../assets/media/capstone/block-flow-diagram.png" data-zoom alt="Block flow diagram: yeast preparation, media sterilization and air filtration feed the bioreactor, followed by cell lysis, biomass separation, purification and drying to purified MbA, with waste air, waste treatment and disposal streams.">
+      <figcaption>Block flow diagram: steps to produce purified MbA from bioengineered <em>S. cerevisiae</em>, with flows per batch (team figure).</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Heat-exchanger network</span><span class="soon">Click to enlarge</span></div>
+    <figure>
+      <img src="../assets/media/capstone/pfd-100-media-sterilization.png" data-zoom alt="PFD 100: media sterilization train with mixing tank T-101, pump P-101, preheater HX-101, steam heater HX-102, sterile storage tanks T-102 and T-103, and transfer pumps P-102 and P-103.">
+      <figcaption>PFD 100, media sterilization. Feed is pressurized to 6 atm, preheated to 125 °C in HX-101, brought to 130 °C with steam in HX-102, then sent back through HX-101 to heat the next feed and cool to 30 °C.</figcaption>
+    </figure>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Media campaign</th><th>Glucose campaign</th></tr></thead>
+        <tbody>
+          <tr><td>HX-101 preheater (heat recovery)</td><td class="num">835.6 kW · 196.2 m²</td><td class="num">824.8 kW · 193.7 m²</td></tr>
+          <tr><td>HX-102 steam heater</td><td class="num">41.8 kW · 0.16 m²</td><td class="num">41.2 kW · 0.16 m²</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>Heat recovery:</strong> the hot sterilized stream preheats the incoming feed, so steam supplies only the last 5 °C (83 kW of the 1.74 MW) and cooling back to 30 °C needs no cooling water.</li>
+      <li><strong>Tight approach:</strong> both ends of the preheater sit 5 °C apart, which makes it large (about 196 m²) and requires counter-current flow: the cold side leaves at 125 °C while the hot side leaves at 30 °C.</li>
+      <li><strong>Staying liquid:</strong> P-101 raises the feed to 6 atm, well above the ~2.7 bar at which water boils at 130 °C.</li>
+      <li>Shell-and-tube exchangers in 316L stainless steel. The two campaigns never run at once, so the network carries about 0.88 MW at any time.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">P&amp;ID: sterile feed lines</span><span class="soon">Click to enlarge</span></div>
+    <figure>
+      <img src="../assets/media/capstone/pid-sterile-feed-lines.png" data-zoom alt="P&amp;ID detail of the sterile glucose line BF-113 (3/4 inch stainless) with FT-106, FI-105, PI-104, AI-101 and analyzer controller AIC-101 driving AV-101, and the sterilized media line BF-111 (1-1/2 inch stainless) with FT-101, totalizer TOT-1 and FIC-103 driving FV-102.">
+      <figcaption>My section of the bioreactor P&amp;ID: the two sterile feeds from PFD 100 into fermenter R-301.</figcaption>
+    </figure>
+    <h3 class="sub">Control narratives</h3>
+    <p class="fine">From the design report.</p>
+    <div class="table-wrap">
+      <table class="narrative">
+        <caption>Media addition control loop</caption>
+        <tbody>
+          <tr><th scope="row">Description</th><td>The volume of sterilized media added to the bioreactor R-301 at the beginning of the batch process is controlled by FIC-103 and FV-102.</td></tr>
+          <tr><th scope="row">Control loop</th><td>The volume of sterilized media added to R-301 is controlled by the control loop FIC-103/FV-102. The flow rate of sterilized media into R-301 is measured by FT-101. The output of FT-101 is sent to the totalizer TOT-1, which tracks the total volume of sterilized media added to R-301. The output of TOT-1 is sent to the flow indicating controller FIC-103, whose output controls the flow valve FV-102, which modulates the flow of sterilized media into R-301.</td></tr>
+          <tr><th scope="row">Alarms</th><td>N/A</td></tr>
+          <tr><th scope="row">Trips</th><td>N/A</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table class="narrative">
+        <caption>Fermenter glucose concentration control loop</caption>
+        <tbody>
+          <tr><th scope="row">Description</th><td>The concentration of glucose in the bioreactor R-301 after the batch fermentation is controlled by the addition of a concentrated aqueous glucose solution. The addition of this solution is controlled by AIC-101 and AV-101.</td></tr>
+          <tr><th scope="row">Control loop</th><td>The concentration of glucose in R-301 is controlled by the control loop AIC-101/AV-101. The current glucose concentration is read by the analyzer transmitter AT-101. The output of AT-101 is sent to the analyzer indicating controller AIC-101. The output of AIC-101 controls the valve AV-101, which dictates the flow of concentrated aqueous glucose into R-301.</td></tr>
+          <tr><th scope="row">Alarms</th><td>High (SGAH-101) and low (SGAL-101) alarms alert operators when the glucose concentration in R-301 is in danger of leaving the process specification.</td></tr>
+          <tr><th scope="row">Trips</th><td>N/A</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Both feed valves fail closed: on a utility failure, nothing of uncertain sterility reaches the fermenter. Each line has block valves either side of the instruments and drain valves for maintenance.</p>
+
+    <details class="legend">
+      <summary>How to read the drawing</summary>
+      <h3 class="sub">Line designation</h3>
+      <p><code>BF-111-1½"-SS</code> = service, line number, line size, material of construction.</p>
+      <dl class="key">
+        <div><dt>BF</dt><dd>Biologic feed</dd></div>
+        <div><dt>BL</dt><dd>Biologic service / biomass containing</dd></div>
+        <div><dt>CH</dt><dd>Chemical solution</dd></div>
+        <div><dt>UT</dt><dd>Utility service</dd></div>
+        <div><dt>WS</dt><dd>Waste service</dd></div>
+        <div><dt>SS / CS</dt><dd>Stainless steel / carbon steel</dd></div>
+      </dl>
+      <h3 class="sub">Instrument tags in my section</h3>
+      <dl class="key">
+        <div><dt>FT</dt><dd>Flow transmitter</dd></div>
+        <div><dt>FI</dt><dd>Flow indicator</dd></div>
+        <div><dt>FIC</dt><dd>Flow indicating controller</dd></div>
+        <div><dt>TOT</dt><dd>Totalizer</dd></div>
+        <div><dt>AT / AI</dt><dd>Analyzer transmitter / indicator (glucose concentration)</dd></div>
+        <div><dt>AIC</dt><dd>Analyzer indicating controller</dd></div>
+        <div><dt>PI</dt><dd>Pressure indicator</dd></div>
+        <div><dt>FV / AV</dt><dd>Control valves for the flow and analyzer loops</dd></div>
+      </dl>
+      <h3 class="sub">Symbols</h3>
+      <dl class="key wide">
+        <div><dt>Circle</dt><dd>Locally mounted instrument</dd></div>
+        <div><dt>Circle in a square</dt><dd>Remote control system (e.g. DCS)</dd></div>
+        <div><dt>Diamond with I</dt><dd>Interlock</dd></div>
+        <div><dt>H / L / HH / LL</dt><dd>High, low, high-high and low-low alarm or interlock</dd></div>
+        <div><dt>Open / filled bow-tie</dt><dd>Isolation valve open / closed</dd></div>
+        <div><dt>Hatched line</dt><dd>Insulation</dd></div>
+      </dl>
+    </details>
+
+    <figure class="after-legend">
+      <img src="../assets/media/capstone/pid-bioreactor-r301.png" data-zoom alt="Full bioreactor P&amp;ID, drawing D-02-1001: fermenter R-301 with acid, base, antifoam, yeast, glucose, media and air feeds, coolant, waste gas, TFF filter F-301 and harvest pump P-304.">
+      <figcaption>Full bioreactor P&amp;ID (team drawing).</figcaption>
+    </figure>
+    <ol class="fine">
+      <li>On R-301, each transmitter drawn represents five installed transmitters.</li>
+      <li>Every controller has a redundant controller installed.</li>
+      <li>A safety instrumented system (SIS) is implemented where required for safety functions.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Biomass separation</span><span class="soon">Click to enlarge</span></div>
+    <figure>
+      <img src="../assets/media/capstone/pfd-400-biomass-separation.png" data-zoom alt="PFD 400: harvest stream diluted in T-401, concentrated in disk-stack centrifuge C-401, lysed in high-pressure homogenizer H-401, then filtered through F-401 with permeate to purification and biomass to waste treatment.">
+      <figcaption>PFD 400. The harvest is diluted (T-401), concentrated in a disk-stack centrifuge (C-401), lysed in a high-pressure homogenizer (H-401), then filtered (F-401): permeate carries MbA to purification, and spent biomass goes to waste treatment.</figcaption>
+    </figure>
+    <!-- TODO: material balance table and basis from the PFD 400 hand calcs -->
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Economics</span></div>
+    <p>I built the plant's economic model, from equipment costs through capital, operating cost, revenue and financed cash flow to profitability, to inform the final go/no-go decision.</p>
+    <p>The model in our final presentation showed the first design falling short of our 12% minimum return. After that feedback I reworked it for the final report: fill-and-finish moved to a contract facility, MbA sold in bulk at $0.85 per dose instead of $1.00, and the loan spread over 20 years instead of 10, matching the plant life and easing early cash flow. The revised plant reached a 17% real IRR.</p>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td>Delivered equipment cost</td><td class="num">$9.9M</td></tr>
+          <tr><td>Fixed capital investment</td><td class="num">$75.7M</td></tr>
+          <tr><td>Total capital investment (incl. working capital)</td><td class="num">$86.8M</td></tr>
+          <tr><td>Revenue ($0.85 per 50 mg dose)</td><td class="num">$63.1M / yr</td></tr>
+          <tr><td>Operating cost</td><td class="num">$48.1M / yr</td></tr>
+          <tr><td>IRR on equity, after tax: nominal / real</td><td class="num">21.7% / 17.0%</td></tr>
+          <tr><td>Net present worth (12.9% after-tax MARR)</td><td class="num">$27.9M</td></tr>
+          <tr><td>Benefit–cost ratio</td><td class="num">1.84</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Without the debt, the project IRR is 10.0% real (14.4% nominal).</p>
+
+    <details class="legend">
+      <summary>How the model was built</summary>
+
+      <h3 class="sub">Basis</h3>
+      <ul>
+        <li><strong>Location:</strong> Montreal, Quebec, a Canadian bioprocess hub with industrial-scale infrastructure. Canada's stricter pharmaceutical regulation means product made there can be sold across North America.</li>
+        <li><strong>Schedule:</strong> 2-year build, 20-year plant life, 7,992 operating hours a year (allowing for holidays, maintenance and shutdowns). A 48-hour cycle (36 h fermentation, 12 h turnaround) on two fermenters gives 333 batches a year.</li>
+      </ul>
+
+      <h3 class="sub">Capital: $86.8M</h3>
+      <ul>
+        <li><strong>Equipment, $9.9M delivered:</strong> each unit sized from the PFDs (flow, capacity, material, duty and power), priced from manufacturers where possible and from a cost database otherwise. The fermenters and their agitators were about 61% of the total.</li>
+        <li><strong>Factored estimate:</strong> 50% added to equipment for clean-in-place systems ($14.8M basis), then Peters, Timmerhaus and West's solid–fluid ratios: installation 39%, instrumentation and controls 26%, piping 31%, electrical 10%, buildings 29%, yard 12%, service facilities 55%, engineering 32%, construction 34%, contractor's fee 23% and contingency 37% of equipment.</li>
+        <li><strong>Priced separately:</strong> land ($11.4M, scaled to a 57,000 ft² site in Montreal) and the sterile-water system ($0.8M). Direct costs $57.0M, fixed capital $75.7M, working capital $11.1M.</li>
+      </ul>
+
+      <h3 class="sub">Operating cost: $48.1M a year</h3>
+      <ul>
+        <li><strong>Direct production, $22.6M:</strong> raw materials $2.0M (glucose about $540K; purification buffers, mostly acetonitrile, about $700K), utilities about $6.2M (96% electricity, at $0.117/kWh) and operating labour $4.05M.</li>
+        <li><strong>Operating labour:</strong> the Alkhayat–Gerrard correlation, N<sub>OL</sub> = (6.29 + 31.7P² + 0.23N<sub>np</sub>)<sup>0.5</sup>, with P = 3 solids-handling steps and N<sub>np</sub> = 8 other units, gives 17.1, so 18 operators per shift. At 4.5 operators per position for round-the-clock operation and $50,000 each: $4.05M.</li>
+        <li><strong>Fixed charges, $14.7M</strong> (depreciation, property tax, insurance, plant overhead) and <strong>general expenses, $10.8M</strong> (administration, sales and marketing, R&amp;D).</li>
+      </ul>
+
+      <h3 class="sub">Revenue: $63.1M a year</h3>
+      <ul>
+        <li>11.14 kg of MbA per batch × 333 batches = 3,711 kg a year = 74.2 million 50 mg doses at $0.85.</li>
+        <li><strong>Why $0.85:</strong> the sponsor's targets were at most $1 per pill at retail, a 50 mg dose and 100,000 kg a year. With no titer data, the design relied on literature values, which supported about 3,700 kg a year. On thin margins, selling powder in bulk to a fill-and-finish partner (who sells pills at $1) carried less risk and cost than packaging pills in-house.</li>
+      </ul>
+
+      <h3 class="sub">Cash flow and profitability</h3>
+      <ul>
+        <li><strong>Financing:</strong> 30% equity; 70% debt ($60.8M) at 12% compounded monthly over 20 years, $669,137 a month.</li>
+        <li><strong>Depreciation:</strong> Canadian capital cost allowance by asset class: building class 6 (10%, half-year rule), equipment class 53 (50%) and electronics class 50 (55%), where the accelerated investment incentive waives the half-year rule.</li>
+        <li><strong>Taxes and inflation:</strong> 26.5% corporate tax and 4% inflation; sales and operating costs start in year 2, after the build.</li>
+        <li><strong>Profitability:</strong> net present worth and IRR rather than payback or simple return, because they account for the time value of money. NPW at the 12.9% after-tax MARR (13% real, 17.5% with inflation) measures the value created; IRR gives the return as a percentage. Each covers the other's blind spots.</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Looking back</span></div>
+    <h3 class="sub">Design</h3>
+    <ul>
+      <li><strong>Leak direction in HX-101:</strong> the sterile side runs about 2 atm below the unsterile side, so a tube leak would contaminate the sterile stream. Because the sterile side is downstream of the raw side in the same line, a valve alone can't reverse that. I'd move the main pump to after HX-101's cold side, keeping the raw side at about 3 atm (enough to stop it boiling at 125 °C), so the sterilized media returns at higher pressure, held there by a back-pressure valve.</li>
+      <li><strong>Safety layer:</strong> add an independent high-high level trip on each fermenter, with its own sensor and shutoff, separate from the feed control loops.</li>
+    </ul>
+    <h3 class="sub">Economics</h3>
+    <ul>
+      <li><strong>Sensitivity analysis:</strong> we varied only selling price and capital. I'd test the least certain inputs first, starting with titer (0.8 to 1.2 g/L would mean 50% more MbA from the same inputs), and run a Monte Carlo analysis instead of one variable at a time.</li>
+      <li><strong>Estimate quality:</strong> about 80% of the equipment cost came from database estimates rather than quotes, and the fermenter agitators alone were 41% of it. That's normal for a preliminary estimate, but they're the first numbers I'd firm up.</li>
+      <li><strong>Overhead and cleaning:</strong> plant overhead was taken as 10% of manufacturing cost ($3.6M), where the textbook basis (50–70% of labour, supervision and maintenance) gives $4.2–5.9M. The clean-in-place operating cost had no data behind it.</li>
+      <li><strong>Chiller efficiency:</strong> reviewing the model after the project, I found the chiller's coefficient of performance set at 1.5. Water-cooled screw chillers above about 1,160 kW run at 4.6 or better. Correcting it cuts chiller power from 1,926 kW to 628 kW and the utility bill from about $5.9M to $1.9M a year, a 67% reduction.</li>
+      <li><strong>Depreciation:</strong> the first schedule front-loaded building depreciation (no half-year rule) and used 50% instead of 55% for electronics. Getting the timing right moves deductions into the years that actually pay tax.</li>
+    </ul>
+    <h3 class="sub">What I'd carry forward</h3>
+    <ul>
+      <li>Recurring costs can outweigh capital: $48M a year to run against $87M once to build.</li>
+      <li>Trace every major cost back to something physical (a flow rate, a capacity, operating hours) instead of accepting a number because the spreadsheet formula works.</li>
+      <li>Question constraints early. The price cap and the missing titer data shaped the outcome more than any equipment choice.</li>
+    </ul>
+  </div>
+
+  <!-- TODO: Documentation gallery (typeset sample calcs + original hand calcs)
+  <div class="card">
+    <div class="card-head"><span class="label">Documentation</span><span class="soon">Click to enlarge</span></div>
+    <div class="doc-grid">
+      <div class="doc">
+        <div class="thumb"><span class="ph">Add: HEX network sample calc</span></div>
+        <p class="cap"><span class="type">Sample calc</span>Heat duties, LMTD and exchanger areas.</p>
+      </div>
+      <div class="doc">
+        <div class="thumb"><span class="ph">Add: pump sizing sample calc</span></div>
+        <p class="cap"><span class="type">Sample calc</span>Pipe sizing, total head, NPSH and preliminary pump power.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <p class="note">Course design project. Figures are from the team's design report, stream tables and economic model.</p>
+</main>
+
+<footer><div class="wrap">
+  <a href="mailto:dolaniyan321@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/daniel-olaniyan/">LinkedIn</a> · <a href="https://github.com/DanielOlaniyan">GitHub</a>
+</div></footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
