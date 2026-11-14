@@ -184,6 +184,7 @@
 
   <div class="card">
     <div class="card-head"><span class="label">Economics</span></div>
+    <p>I built the plant's economic model, from equipment costs through capital, operating cost, revenue and financed cash flow to profitability, to inform the final go/no-go decision.</p>
     <p>The model in our final presentation showed the first design falling short of our 12% minimum return. After that feedback I reworked it for the final report: fill-and-finish moved to a contract facility, MbA sold in bulk at $0.85 per dose instead of $1.00, and the loan spread over 20 years instead of 10. The revised plant reached a 17% real IRR.</p>
     <div class="table-wrap">
       <table>
@@ -193,21 +194,73 @@
           <tr><td>Total capital investment (incl. working capital)</td><td class="num">$86.8M</td></tr>
           <tr><td>Revenue ($0.85 per 50 mg dose)</td><td class="num">$63.1M / yr</td></tr>
           <tr><td>Operating cost</td><td class="num">$48.1M / yr</td></tr>
-          <tr><td>IRR, real after-tax, on equity</td><td class="num">17.0%</td></tr>
+          <tr><td>IRR on equity, after tax: nominal / real</td><td class="num">21.7% / 17.0%</td></tr>
           <tr><td>Net present worth (12.9% after-tax MARR)</td><td class="num">$27.9M</td></tr>
           <tr><td>Benefit–cost ratio</td><td class="num">1.84</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Capital was factored from equipment cost with Peters, Timmerhaus and West's solid-fluid plant factors, after adding 50% to equipment for clean-in-place systems; land and the sterile-water system were added separately. The model assumes 30% equity and 70% debt at 12% over 20 years, 4% inflation and a 2-year build. <span class="fine">Without the debt, the project IRR is 10.0% real (14.4% nominal).</span></p>
+    <p class="fine">Without the debt, the project IRR is 10.0% real (14.4% nominal).</p>
+
+    <details class="legend">
+      <summary>How the model was built</summary>
+
+      <h3 class="sub">Basis</h3>
+      <ul>
+        <li><strong>Location:</strong> Montreal, Quebec, a Canadian bioprocess hub with industrial-scale infrastructure. Canada's stricter pharmaceutical regulation means product made there can be sold across North America.</li>
+        <li><strong>Schedule:</strong> 2-year build, 20-year plant life, 7,992 operating hours a year (allowing for holidays, maintenance and shutdowns). A 48-hour cycle (36 h fermentation, 12 h turnaround) on two fermenters gives 333 batches a year.</li>
+      </ul>
+
+      <h3 class="sub">Capital: $86.8M</h3>
+      <ul>
+        <li><strong>Equipment, $9.9M delivered:</strong> each unit sized from the PFDs (flow, capacity, material, duty and power), priced from manufacturers where possible and from a cost database otherwise. The fermenters and their agitators were about 61% of the total.</li>
+        <li><strong>Factored estimate:</strong> 50% added to equipment for clean-in-place systems ($14.8M basis), then Peters, Timmerhaus and West's solid–fluid ratios: installation 39%, instrumentation and controls 26%, piping 31%, electrical 10%, buildings 29%, yard 12%, service facilities 55%, engineering 32%, construction 34%, contractor's fee 23% and contingency 37% of equipment.</li>
+        <li><strong>Priced separately:</strong> land ($11.4M, scaled to a 57,000 ft² site in Montreal) and the sterile-water system ($0.8M). Direct costs $57.0M, fixed capital $75.7M, working capital $11.1M.</li>
+      </ul>
+
+      <h3 class="sub">Operating cost: $48.1M a year</h3>
+      <ul>
+        <li><strong>Direct production, $22.6M:</strong> raw materials $2.0M (glucose about $540K; purification buffers, mostly acetonitrile, about $700K), utilities about $6.2M (96% electricity, at $0.117/kWh) and operating labour $4.05M.</li>
+        <li><strong>Operating labour:</strong> the Alkhayat–Gerrard correlation, N<sub>OL</sub> = (6.29 + 31.7P² + 0.23N<sub>np</sub>)<sup>0.5</sup>, with P = 3 solids-handling steps and N<sub>np</sub> = 8 other units, gives 17.1, so 18 operators per shift. At 4.5 operators per position for round-the-clock operation and $50,000 each: $4.05M.</li>
+        <li><strong>Fixed charges, $14.7M</strong> (depreciation, property tax, insurance, plant overhead) and <strong>general expenses, $10.8M</strong> (administration, sales and marketing, R&amp;D).</li>
+      </ul>
+
+      <h3 class="sub">Revenue: $63.1M a year</h3>
+      <ul>
+        <li>11.14 kg of MbA per batch × 333 batches = 3,711 kg a year = 74.2 million 50 mg doses at $0.85.</li>
+        <li><strong>Why $0.85:</strong> the sponsor's targets were at most $1 per pill at retail, a 50 mg dose and 100,000 kg a year. With no titer data, the design relied on literature values, which supported about 3,700 kg a year. On thin margins, selling powder in bulk to a fill-and-finish partner (who sells pills at $1) carried less risk and cost than packaging pills in-house.</li>
+      </ul>
+
+      <h3 class="sub">Cash flow and profitability</h3>
+      <ul>
+        <li><strong>Financing:</strong> 30% equity; 70% debt ($60.8M) at 12% compounded monthly over 20 years, $669,137 a month.</li>
+        <li><strong>Depreciation:</strong> Canadian capital cost allowance by asset class: building class 6 (10%, half-year rule), equipment class 53 (50%) and electronics class 50 (55%), where the accelerated investment incentive waives the half-year rule.</li>
+        <li><strong>Taxes and inflation:</strong> 26.5% corporate tax and 4% inflation; sales and operating costs start in year 2, after the build.</li>
+        <li><strong>Profitability:</strong> net present worth and IRR rather than payback or simple return, because they account for the time value of money. NPW at the 12.9% after-tax MARR (13% real, 17.5% with inflation) measures the value created; IRR gives the return as a percentage. Each covers the other's blind spots.</li>
+      </ul>
+    </details>
   </div>
 
   <div class="card">
     <div class="card-head"><span class="label">Looking back</span></div>
+    <h3 class="sub">Design</h3>
     <ul>
       <li><strong>Leak direction in HX-101:</strong> the sterile side runs about 2 atm below the unsterile side, so a tube leak would contaminate the sterile stream. A back-pressure valve on the sterile side would reverse that.</li>
       <li><strong>Steam conditions:</strong> steam at 4 atm condenses at about 144 °C, not the 150 °C we designed on. Either raise the steam pressure to about 4.8 bar or size HX-102 on 144 °C, which needs roughly a third more area.</li>
       <li><strong>Safety layer:</strong> add an independent high-high level trip on each fermenter, with its own sensor and shutoff, separate from the feed control loops.</li>
+    </ul>
+    <h3 class="sub">Economics</h3>
+    <ul>
+      <li><strong>Sensitivity analysis:</strong> we varied only selling price and capital. I'd test the least certain inputs first, starting with titer (0.8 to 1.2 g/L would mean 50% more MbA from the same inputs), and run a Monte Carlo analysis instead of one variable at a time.</li>
+      <li><strong>Estimate quality:</strong> about 80% of the equipment cost came from database estimates rather than quotes, and the fermenter agitators alone were 41% of it. That's normal for a preliminary estimate, but they're the first numbers I'd firm up.</li>
+      <li><strong>Overhead and cleaning:</strong> plant overhead was taken as 10% of manufacturing cost ($3.6M), where the textbook basis (50–70% of labour, supervision and maintenance) gives $4.2–5.9M. The clean-in-place operating cost had no data behind it.</li>
+      <li><strong>Depreciation:</strong> the first schedule front-loaded building depreciation (no half-year rule) and used 50% instead of 55% for electronics. Getting the timing right moves deductions into the years that actually pay tax.</li>
+    </ul>
+    <h3 class="sub">What I'd carry forward</h3>
+    <ul>
+      <li>Recurring costs can outweigh capital: $48M a year to run against $87M once to build.</li>
+      <li>Trace every major cost back to something physical (a flow rate, a capacity, operating hours) instead of accepting a number because the spreadsheet formula works.</li>
+      <li>Question constraints early. The price cap and the missing titer data shaped the outcome more than any equipment choice.</li>
     </ul>
   </div>
 

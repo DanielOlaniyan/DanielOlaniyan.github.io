@@ -247,3 +247,4 @@ figure.after-legend { margin-top: 26px; }
   table.narrative th { border-bottom: 0; padding-bottom: 2px; }
   table.narrative td { padding-top: 2px; }
 }
+details.legend ul { margin-top: 4px; }
