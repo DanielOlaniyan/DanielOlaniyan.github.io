@@ -226,3 +226,24 @@ footer { padding: 0 0 40px; font-family: var(--mono); font-size: 13px; color: va
 
 /* Draft markers — search for class="todo" and clear before sharing */
 .todo, .todo * { color: var(--todo) !important; }
+
+/* P&ID: control narratives and legend */
+h3.sub { font-size: 16px; margin: 22px 0 6px; }
+table.narrative { margin-top: 10px; }
+table.narrative caption { text-align: left; font-weight: 700; color: var(--text); padding: 4px 0 6px; }
+table.narrative th { width: 130px; vertical-align: top; text-transform: none; letter-spacing: 0; font-size: 13px; }
+details.legend { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
+details.legend summary { cursor: pointer; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+dl.key { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px 22px; margin: 6px 0 0; }
+dl.key div { display: flex; gap: 10px; }
+dl.key dt { font-family: var(--mono); color: var(--accent); min-width: 64px; }
+dl.key dd { margin: 0; color: var(--muted); }
+code { font-family: var(--mono); font-size: 0.92em; color: var(--accent); }
+dl.key.wide { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+dl.key.wide dt { font-family: inherit; min-width: 170px; }
+figure.after-legend { margin-top: 26px; }
+@media (max-width: 720px) {
+  table.narrative th, table.narrative td { display: block; width: auto; }
+  table.narrative th { border-bottom: 0; padding-bottom: 2px; }
+  table.narrative td { padding-top: 2px; }
+}

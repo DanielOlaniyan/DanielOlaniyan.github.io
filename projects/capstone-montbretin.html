@@ -102,18 +102,67 @@
       <img src="../assets/media/capstone/pid-sterile-feed-lines.png" data-zoom alt="P&amp;ID detail of the sterile glucose line BF-113 (3/4 inch stainless) with FT-106, FI-105, PI-104, AI-101 and analyzer controller AIC-101 driving AV-101, and the sterilized media line BF-111 (1-1/2 inch stainless) with FT-101, totalizer TOT-1 and FIC-103 driving FV-102.">
       <figcaption>My section of the bioreactor P&amp;ID: the two sterile feeds from PFD 100 into fermenter R-301.</figcaption>
     </figure>
-    <div class="grid-2">
-      <div>
-        <h3>Sterile media (BF-111)</h3>
-        <p>Charges a set volume, about 14 m³, at the start of each batch. FT-101 measures the flow; the totalizer TOT-1 counts the volume delivered, and FIC-103 controls the rate through FV-102, closing it when the preset is reached. Controlling the rate as well as the total keeps the fill steady and avoids overshooting the preset.</p>
-      </div>
-      <div>
-        <h3>Sterile glucose (BF-113)</h3>
-        <p>Feeds glucose through the fed-batch phases. An analyzer on the fermenter (AIC-101, with high and low alarms) moves AV-101 to hold broth glucose at setpoint, so the loop controls what the cells actually see rather than how much is pumped. FT-106 and FI-105 indicate flow, and PI-104 is a local gauge with its own isolation valve.</p>
-      </div>
+    <h3 class="sub">Control narratives</h3>
+    <p class="fine">From the design report.</p>
+    <div class="table-wrap">
+      <table class="narrative">
+        <caption>Media addition control loop</caption>
+        <tbody>
+          <tr><th scope="row">Description</th><td>The volume of sterilized media added to the bioreactor R-301 at the beginning of the batch process is controlled by FIC-103 and FV-102.</td></tr>
+          <tr><th scope="row">Control loop</th><td>The volume of sterilized media added to R-301 is controlled by the control loop FIC-103/FV-102. The flow rate of sterilized media into R-301 is measured by FT-101. The output of FT-101 is sent to the totalizer TOT-1, which tracks the total volume of sterilized media added to R-301. The output of TOT-1 is sent to the flow indicating controller FIC-103, whose output controls the flow valve FV-102, which modulates the flow of sterilized media into R-301.</td></tr>
+          <tr><th scope="row">Alarms</th><td>N/A</td></tr>
+          <tr><th scope="row">Trips</th><td>N/A</td></tr>
+        </tbody>
+      </table>
     </div>
-    <p>Both feed valves fail closed and carry interlocks: on a utility failure, nothing of uncertain sterility reaches the fermenter, and the vessel can't be overfilled or overfed. Each line has block valves either side of the instruments and drain valves for maintenance.</p>
-    <figure>
+    <div class="table-wrap">
+      <table class="narrative">
+        <caption>Fermenter glucose concentration control loop</caption>
+        <tbody>
+          <tr><th scope="row">Description</th><td>The concentration of glucose in the bioreactor R-301 after the batch fermentation is controlled by the addition of a concentrated aqueous glucose solution. The addition of this solution is controlled by AIC-101 and AV-101.</td></tr>
+          <tr><th scope="row">Control loop</th><td>The concentration of glucose in R-301 is controlled by the control loop AIC-101/AV-101. The current glucose concentration is read by the analyzer transmitter AT-101. The output of AT-101 is sent to the analyzer indicating controller AIC-101. The output of AIC-101 controls the valve AV-101, which dictates the flow of concentrated aqueous glucose into R-301.</td></tr>
+          <tr><th scope="row">Alarms</th><td>High (SGAH-101) and low (SGAL-101) alarms alert operators when the glucose concentration in R-301 is in danger of leaving the process specification.</td></tr>
+          <tr><th scope="row">Trips</th><td>N/A</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Both feed valves fail closed: on a utility failure, nothing of uncertain sterility reaches the fermenter. Each line has block valves either side of the instruments and drain valves for maintenance.</p>
+
+    <details class="legend">
+      <summary>How to read the drawing</summary>
+      <h3 class="sub">Line designation</h3>
+      <p><code>BF-111-1½"-SS</code> = service, line number, line size, material of construction.</p>
+      <dl class="key">
+        <div><dt>BF</dt><dd>Biologic feed</dd></div>
+        <div><dt>BL</dt><dd>Biologic service / biomass containing</dd></div>
+        <div><dt>CH</dt><dd>Chemical solution</dd></div>
+        <div><dt>UT</dt><dd>Utility service</dd></div>
+        <div><dt>WS</dt><dd>Waste service</dd></div>
+        <div><dt>SS / CS</dt><dd>Stainless steel / carbon steel</dd></div>
+      </dl>
+      <h3 class="sub">Instrument tags in my section</h3>
+      <dl class="key">
+        <div><dt>FT</dt><dd>Flow transmitter</dd></div>
+        <div><dt>FI</dt><dd>Flow indicator</dd></div>
+        <div><dt>FIC</dt><dd>Flow indicating controller</dd></div>
+        <div><dt>TOT</dt><dd>Totalizer</dd></div>
+        <div><dt>AT / AI</dt><dd>Analyzer transmitter / indicator (glucose concentration)</dd></div>
+        <div><dt>AIC</dt><dd>Analyzer indicating controller</dd></div>
+        <div><dt>PI</dt><dd>Pressure indicator</dd></div>
+        <div><dt>FV / AV</dt><dd>Control valves for the flow and analyzer loops</dd></div>
+      </dl>
+      <h3 class="sub">Symbols</h3>
+      <dl class="key wide">
+        <div><dt>Circle</dt><dd>Locally mounted instrument</dd></div>
+        <div><dt>Circle in a square</dt><dd>Remote control system (e.g. DCS)</dd></div>
+        <div><dt>Diamond with I</dt><dd>Interlock</dd></div>
+        <div><dt>H / L / HH / LL</dt><dd>High, low, high-high and low-low alarm or interlock</dd></div>
+        <div><dt>Open / filled bow-tie</dt><dd>Isolation valve open / closed</dd></div>
+        <div><dt>Hatched line</dt><dd>Insulation</dd></div>
+      </dl>
+    </details>
+
+    <figure class="after-legend">
       <img src="../assets/media/capstone/pid-bioreactor-r301.png" data-zoom alt="Full bioreactor P&amp;ID, drawing D-02-1001: fermenter R-301 with acid, base, antifoam, yeast, glucose, media and air feeds, coolant, waste gas, TFF filter F-301 and harvest pump P-304.">
       <figcaption>Full bioreactor P&amp;ID (team drawing).</figcaption>
     </figure>
