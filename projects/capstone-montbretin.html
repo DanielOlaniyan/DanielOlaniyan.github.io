@@ -245,7 +245,7 @@
     <div class="card-head"><span class="label">Looking back</span></div>
     <h3 class="sub">Design</h3>
     <ul>
-      <li><strong>Leak direction in HX-101:</strong> the sterile side runs about 2 atm below the unsterile side, so a tube leak would contaminate the sterile stream. A back-pressure valve on the sterile side would reverse that.</li>
+      <li><strong>Leak direction in HX-101:</strong> the sterile side runs about 2 atm below the unsterile side, so a tube leak would contaminate the sterile stream. Because the sterile side is downstream of the raw side in the same line, a valve alone can't reverse that. I'd move the main pump to after HX-101's cold side, keeping the raw side at about 3 atm (enough to stop it boiling at 125 °C), so the sterilized media returns at higher pressure, held there by a back-pressure valve.</li>
       <li><strong>Steam conditions:</strong> steam at 4 atm condenses at about 144 °C, not the 150 °C we designed on. Either raise the steam pressure to about 4.8 bar or size HX-102 on 144 °C, which needs roughly a third more area.</li>
       <li><strong>Safety layer:</strong> add an independent high-high level trip on each fermenter, with its own sensor and shutoff, separate from the feed control loops.</li>
     </ul>
