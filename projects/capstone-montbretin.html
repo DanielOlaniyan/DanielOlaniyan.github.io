@@ -179,7 +179,22 @@
       <img src="../assets/media/capstone/pfd-400-biomass-separation.png" data-zoom alt="PFD 400: harvest stream diluted in T-401, concentrated in disk-stack centrifuge C-401, lysed in high-pressure homogenizer H-401, then filtered through F-401 with permeate to purification and biomass to waste treatment.">
       <figcaption>PFD 400. The harvest is diluted (T-401), concentrated in a disk-stack centrifuge (C-401), lysed in a high-pressure homogenizer (H-401), then filtered (F-401): permeate carries MbA to purification, and spent biomass goes to waste treatment.</figcaption>
     </figure>
-    <!-- TODO: material balance table and basis from the PFD 400 hand calcs -->
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Step</th><th>Design point</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Centrifuge wash (C-401)</td><td class="num">35 m³/h, 10 passes</td><td class="num">4.5 h · 99.0% of cells kept</td></tr>
+          <tr><td>Microfiltration (F-401)</td><td class="num">320 m², 0.2 µm, 4 bar max</td><td class="num">2.1 h + 3.2 h · 98.3% MbA recovery</td></tr>
+          <tr><td>Holding tanks</td><td class="num">T-401 18 m³ · T-402 5.2 m³</td><td class="num">Agitators 3.5 kW · 1.5 kW</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>Centrifuge wash:</strong> fresh buffer replaces the spent broth one-for-one while the disc-stack centrifuge returns the cells to the tank. At the centrifuge's 35 m³/h limit, 99.9% of the broth liquid is replaced in 4.5 hours.</li>
+      <li><strong>Filtration:</strong> concentration at constant flux until the membrane reaches 4 bar, then diafiltration at constant pressure until 5% of the MbA is left in the retentate.</li>
+      <li><strong>Unit choices:</strong> a disc-stack centrifuge over a tubular bowl for throughput (at the cost of harder cleaning), and cross-flow filtration over a rotary vacuum filter to suit the batch process.</li>
+      <li>About 10 hours of centrifuging and filtration per batch keeps separation inside the 12-hour turnaround.</li>
+    </ul>
   </div>
 
   <div class="card">
@@ -264,21 +279,32 @@
     </ul>
   </div>
 
-  <!-- TODO: Documentation gallery (typeset sample calcs + original hand calcs)
   <div class="card">
-    <div class="card-head"><span class="label">Documentation</span><span class="soon">Click to enlarge</span></div>
+    <div class="card-head"><span class="label">Documentation</span><span class="soon">Opens PDF</span></div>
+    <p class="fine">My sample calculations, typeset from my hand calcs and checked against the team's stream tables.</p>
     <div class="doc-grid">
       <div class="doc">
-        <div class="thumb"><span class="ph">Add: HEX network sample calc</span></div>
-        <p class="cap"><span class="type">Sample calc</span>Heat duties, LMTD and exchanger areas.</p>
+        <a class="thumb pdf" href="../assets/docs/capstone/capstone_01_pump_sizing.pdf" target="_blank" rel="noopener"><img src="../assets/docs/capstone/capstone_01_pump_sizing.png" alt="First page of the pump sizing and piping sample calculation." loading="lazy"></a>
+        <p class="cap"><span class="type">Sample calc · PDF</span>Pump sizing and piping: pipe sizing, total head, NPSH and preliminary pump power (P-102, P-103).</p>
       </div>
       <div class="doc">
-        <div class="thumb"><span class="ph">Add: pump sizing sample calc</span></div>
-        <p class="cap"><span class="type">Sample calc</span>Pipe sizing, total head, NPSH and preliminary pump power.</p>
+        <a class="thumb pdf" href="../assets/docs/capstone/capstone_02_hex_network.pdf" target="_blank" rel="noopener"><img src="../assets/docs/capstone/capstone_02_hex_network.png" alt="First page of the heat-exchanger network sample calculation." loading="lazy"></a>
+        <p class="cap"><span class="type">Sample calc · PDF</span>Heat-exchanger network: duties, log-mean temperature differences and areas for HX-101 and HX-102.</p>
+      </div>
+      <div class="doc">
+        <a class="thumb pdf" href="../assets/docs/capstone/capstone_03_centrifuge_wash.pdf" target="_blank" rel="noopener"><img src="../assets/docs/capstone/capstone_03_centrifuge_wash.png" alt="First page of the centrifuge wash cycle sample calculation." loading="lazy"></a>
+        <p class="cap"><span class="type">Sample calc · PDF</span>Centrifuge wash cycle: stream balances, processing time and number of passes.</p>
+      </div>
+      <div class="doc">
+        <a class="thumb pdf" href="../assets/docs/capstone/capstone_04_microfiltration_tff.pdf" target="_blank" rel="noopener"><img src="../assets/docs/capstone/capstone_04_microfiltration_tff.png" alt="First page of the microfiltration (tff) sample calculation." loading="lazy"></a>
+        <p class="cap"><span class="type">Sample calc · PDF</span>Microfiltration (TFF): concentration and diafiltration times, and MbA recovery.</p>
+      </div>
+      <div class="doc">
+        <a class="thumb pdf" href="../assets/docs/capstone/capstone_05_tanks_agitators.pdf" target="_blank" rel="noopener"><img src="../assets/docs/capstone/capstone_05_tanks_agitators.png" alt="First page of the holding tanks and agitators sample calculation." loading="lazy"></a>
+        <p class="cap"><span class="type">Sample calc · PDF</span>Holding tanks and agitators: tank geometry, impeller speed and power.</p>
       </div>
     </div>
   </div>
-  -->
 
   <p class="note">Course design project. Figures are from the team's design report, stream tables and economic model.</p>
 </main>

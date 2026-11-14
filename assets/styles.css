@@ -248,3 +248,6 @@ figure.after-legend { margin-top: 26px; }
   table.narrative td { padding-top: 2px; }
 }
 details.legend ul { margin-top: 4px; }
+.doc a.thumb { display: block; }
+.doc a.thumb img { object-position: top; cursor: pointer; transition: opacity .15s; }
+.doc a.thumb:hover img { opacity: .85; }
