@@ -296,3 +296,9 @@ svg.cfchart .lead { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3
 .key.k1 { background: var(--accent); }
 .key.k2 { background: var(--text); border-radius: 50%; }
 svg.cfchart .lab2 { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
+/* Skills and tools: plain grouped list */
+dl.skills { margin: 0; display: grid; gap: 14px; }
+dl.skills div { display: grid; grid-template-columns: 190px 1fr; gap: 16px; }
+dl.skills dt { color: var(--text); font-weight: 600; }
+dl.skills dd { margin: 0; color: var(--body); }
+@media (max-width: 720px) { dl.skills div { grid-template-columns: 1fr; gap: 2px; } }
