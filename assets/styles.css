@@ -256,3 +256,4 @@ details.legend ul { margin-top: 4px; }
 .figrow img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
 @media (max-width: 720px) { .figrow { grid-template-columns: 1fr; } }
 .figrow { margin-bottom: 18px; }
+figure.hero { margin-top: 18px; }
