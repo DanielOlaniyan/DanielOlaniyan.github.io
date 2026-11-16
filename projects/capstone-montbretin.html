@@ -113,40 +113,14 @@
       <li>Shell-and-tube exchangers in 316L stainless steel. The two campaigns never run at once, so the network carries about 0.88 MW at any time.</li>
     </ul>
     <details class="legend">
-      <summary>Stream table (PFD 100)</summary>
-      <div class="table-wrap">
-        <table class="list">
-          <caption>Media campaign: about 14 m³ in 2 hours</caption>
-          <thead><tr><th>Stream</th><th>Description</th><th>kg/h</th><th>kg/batch</th><th>°C</th><th>atm</th><th>Composition (mass)</th></tr></thead>
-          <tbody>
-<tr><td>101</td><td>Water in</td><td class="num">7,160.95</td><td class="num">14,321.9</td><td class="num">25</td><td class="num">1</td><td>Water</td></tr>
-<tr><td>102</td><td>Media components in</td><td class="num">35.80</td><td class="num">71.6</td><td class="num">25</td><td class="num">1</td><td>Media components</td></tr>
-<tr><td>103</td><td>Tank outlet</td><td class="num">7,196.76</td><td class="num">14,393.5</td><td class="num">25</td><td class="num">1</td><td>99.5% water</td></tr>
-<tr><td>104</td><td>Pressurized (P-101)</td><td class="num">7,196.76</td><td class="num">14,393.5</td><td class="num">25</td><td class="num">6</td><td>99.5% water</td></tr>
-<tr><td>105</td><td>Preheated (HX-101)</td><td class="num">7,196.76</td><td class="num">14,393.5</td><td class="num">125</td><td class="num">5</td><td>99.5% water</td></tr>
-<tr><td>106</td><td>Sterilized (HX-102)</td><td class="num">7,196.76</td><td class="num">14,393.5</td><td class="num">130</td><td class="num">4</td><td>99.5% water</td></tr>
-<tr><td>107</td><td>Cooled (HX-101)</td><td class="num">7,196.76</td><td class="num">14,393.5</td><td class="num">30</td><td class="num">3</td><td>99.5% water</td></tr>
-<tr><td>108–111</td><td>To T-102, then P-102 to fermenter</td><td class="num">7,196.76</td><td class="num">14,393.5</td><td class="num">30</td><td class="num">3 → 1</td><td>99.5% water</td></tr>
-<tr><td>U-101</td><td>Steam in</td><td class="num">66.85</td><td class="num">133.7</td><td class="num">150</td><td class="num">4</td><td>Steam</td></tr>
-<tr><td>U-102</td><td>Condensate out</td><td class="num">66.85</td><td class="num">133.7</td><td class="num">150</td><td class="num">4</td><td>Water</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="table-wrap">
-        <table class="list">
-          <caption>Glucose campaign: about 21 t in 3 hours</caption>
-          <thead><tr><th>Stream</th><th>Description</th><th>kg/h</th><th>kg/batch</th><th>°C</th><th>atm</th><th>Composition (mass)</th></tr></thead>
-          <tbody>
-<tr><td>101</td><td>Water in</td><td class="num">6,455.77</td><td class="num">19,367.3</td><td class="num">25</td><td class="num">1</td><td>Water</td></tr>
-<tr><td>102</td><td>Glucose in</td><td class="num">645.58</td><td class="num">1,942.6</td><td class="num">25</td><td class="num">1</td><td>Glucose</td></tr>
-<tr><td>103–107</td><td>Through the sterilization train</td><td class="num">7,103.29</td><td class="num">21,309.9</td><td class="num">25 → 130 → 30</td><td class="num">6 → 3</td><td>90.9% water, 9.1% glucose</td></tr>
-<tr><td>109, 112–113</td><td>To T-103, then P-103 to fermenter</td><td class="num">7,103.29</td><td class="num">21,309.9</td><td class="num">30</td><td class="num">3 → 1</td><td>90.9% water, 9.1% glucose</td></tr>
-<tr><td>U-101</td><td>Steam in</td><td class="num">65.98</td><td class="num">132.0</td><td class="num">150</td><td class="num">4</td><td>Steam</td></tr>
-<tr><td>U-102</td><td>Condensate out</td><td class="num">65.98</td><td class="num">132.0</td><td class="num">150</td><td class="num">4</td><td>Water</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="fine">Team stream tables. Water properties assumed throughout (c<sub>p</sub> 4.18 kJ/kg·K); densities 1,005 kg/m³ (media) and 1,097 kg/m³ (glucose feed).</p>
+      <summary>Stream tables (PFD 100)</summary>
+      <p class="fine">Team stream tables: media campaign (start-up) and glucose feed campaign. Click to enlarge.</p>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/stream-table-pfd100-media.png" data-zoom alt="PFD 100 stream table, Table 1: media sterilization for bioreactor start-up.">
+        </figure>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/stream-table-pfd100-glucose.png" data-zoom alt="PFD 100 stream table, Table 2: media sterilization for bioreactor feed.">
+        </figure>
     </details>
   </div>
 
@@ -264,22 +238,11 @@
       <li>About 10 hours of centrifuging and filtration per batch keeps separation inside the 12-hour turnaround.</li>
     </ul>
     <details class="legend">
-      <summary>Key streams (PFD 400)</summary>
-      <div class="table-wrap">
-        <table class="list">
-          <thead><tr><th>Stream</th><th>Description</th><th>kg/h</th><th>kg/batch</th></tr></thead>
-          <tbody>
-<tr><td>309</td><td>Harvest from fermenter</td><td class="num">8,016.0</td><td class="num">16,032.0</td></tr>
-<tr><td>401</td><td>Lysis buffer (water) in</td><td class="num">24,426.5</td><td class="num">110,192.5</td></tr>
-<tr><td>403</td><td>Centrifuge feed</td><td class="num">35,070.0</td><td class="num">158,207.3</td></tr>
-<tr><td>404</td><td>Cell concentrate back to T-401</td><td class="num">10,521.0</td><td class="num">47,462.2</td></tr>
-<tr><td>405</td><td>Spent broth to waste treatment</td><td class="num">24,549.0</td><td class="num">110,745.1</td></tr>
-<tr><td>407</td><td>Washed cells to homogenizer</td><td class="num">10,521.0</td><td class="num">4,809.6</td></tr>
-<tr><td>412</td><td>Permeate (MbA) to purification</td><td class="num">1,495.5</td><td class="num">7,949.3</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="fine">Team stream tables, at the centrifuge's 35 m³/h design flow. All streams are liquid at about 25–30 °C and 1 atm.</p>
+      <summary>Stream table (PFD 400)</summary>
+      <p class="fine">Team stream table at the centrifuge's 35 m³/h design flow. Click to enlarge.</p>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/stream-table-pfd400.png" data-zoom alt="PFD 400 stream table, streams 309 and 401 to 413.">
+        </figure>
     </details>
   </div>
 
@@ -302,102 +265,24 @@
       </table>
     </div>
     <p class="fine">Without the debt, the project IRR is 10.0% real (14.4% nominal).</p>
-    <figure class="chart">
-      <figcaption class="chart-title">Delivered equipment cost by group, $9.88M total</figcaption>
-      <div class="bars">
-        <div class="bar"><span class="bl">Fermenter agitators</span><span class="bt"><span class="bf" style="width:100.0%"></span></span><span class="bv">$3.86M <em>39.1%</em></span></div>
-        <div class="bar"><span class="bl">Fermenters</span><span class="bt"><span class="bf" style="width:57.0%"></span></span><span class="bv">$2.20M <em>22.3%</em></span></div>
-        <div class="bar"><span class="bl">Heat exchangers and chiller</span><span class="bt"><span class="bf" style="width:22.3%"></span></span><span class="bv">$860K <em>8.7%</em></span></div>
-        <div class="bar"><span class="bl">Chromatography column</span><span class="bt"><span class="bf" style="width:16.7%"></span></span><span class="bv">$643K <em>6.5%</em></span></div>
-        <div class="bar"><span class="bl">Filters (air and TFF)</span><span class="bt"><span class="bf" style="width:15.7%"></span></span><span class="bv">$605K <em>6.1%</em></span></div>
-        <div class="bar"><span class="bl">Homogenizer</span><span class="bt"><span class="bf" style="width:11.7%"></span></span><span class="bv">$454K <em>4.6%</em></span></div>
-        <div class="bar"><span class="bl">Centrifuge</span><span class="bt"><span class="bf" style="width:11.2%"></span></span><span class="bv">$434K <em>4.4%</em></span></div>
-        <div class="bar"><span class="bl">Air saturation towers</span><span class="bt"><span class="bf" style="width:6.2%"></span></span><span class="bv">$241K <em>2.4%</em></span></div>
-        <div class="bar"><span class="bl">Tanks</span><span class="bt"><span class="bf" style="width:6.0%"></span></span><span class="bv">$233K <em>2.4%</em></span></div>
-        <div class="bar"><span class="bl">Other mixers</span><span class="bt"><span class="bf" style="width:5.1%"></span></span><span class="bv">$198K <em>2.0%</em></span></div>
-        <div class="bar"><span class="bl">Pumps</span><span class="bt"><span class="bf" style="width:2.5%"></span></span><span class="bv">$97K <em>1.0%</em></span></div>
-        <div class="bar"><span class="bl">Dryer, valves and other</span><span class="bt"><span class="bf" style="width:1.4%"></span></span><span class="bv">$54K <em>0.5%</em></span></div>
-      </div>
-      <p class="fine">Basis: cost correlations from a published equipment-cost database 84%, vendor list prices 14%, other estimates 3%. Team data from the project's economic model.</p>
-    </figure>
     <details class="legend">
-      <summary>Full equipment list (69 items)</summary>
-      <div class="table-wrap">
-        <table class="list">
-          <thead><tr><th>Tag</th><th>Equipment</th><th>Area</th><th>Qty</th><th>Cost</th><th>Basis</th></tr></thead>
-          <tbody>
-<tr><td>P-101</td><td>Sterilization Pressurization Pump</td><td>Media sterilization</td><td class="num">1</td><td class="num">$8,776</td><td>Cost correlation</td></tr>
-<tr><td>P-102</td><td>Sterile Media Pump</td><td>Media sterilization</td><td class="num">1</td><td class="num">$1,888</td><td>Vendor price</td></tr>
-<tr><td>P-103</td><td>Sterile Glucose Pump</td><td>Media sterilization</td><td class="num">1</td><td class="num">$1,888</td><td>Vendor price</td></tr>
-<tr><td>P-301</td><td>Antifoam Pump</td><td>Fermentation</td><td class="num">2</td><td class="num">$490</td><td>Vendor price</td></tr>
-<tr><td>P-302</td><td>Base Pump</td><td>Fermentation</td><td class="num">2</td><td class="num">$490</td><td>Vendor price</td></tr>
-<tr><td>P-303</td><td>Acid Pump</td><td>Fermentation</td><td class="num">2</td><td class="num">$490</td><td>Vendor price</td></tr>
-<tr><td>P-304</td><td>Bioreactor Outlet Pump</td><td>Fermentation</td><td class="num">2</td><td class="num">$22,275</td><td>Vendor price</td></tr>
-<tr><td>P-401</td><td>Lysis Buffer Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$2,922</td><td>Vendor price</td></tr>
-<tr><td>P-402</td><td>Harvest Stream + Lysis Buffer (Water) to Centrifuge Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$2,922</td><td>Vendor price</td></tr>
-<tr><td>P-403</td><td>Liquid Waste Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$2,922</td><td>Vendor price</td></tr>
-<tr><td>P-404</td><td>Post-Lysed to Filtration Tank Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$1,888</td><td>Vendor price</td></tr>
-<tr><td>P-405</td><td>Filtration Solvent (Water) Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$2,922</td><td>Vendor price</td></tr>
-<tr><td>P-406</td><td>Filtration Feed Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$1,888</td><td>Vendor price</td></tr>
-<tr><td>P-407</td><td>Biomass Waste Pump</td><td>Biomass separation</td><td class="num">1</td><td class="num">$1,888</td><td>Vendor price</td></tr>
-<tr><td>P-501</td><td>Filter 1 Pump</td><td>Purification</td><td class="num">1</td><td class="num">$15,875</td><td>Vendor price</td></tr>
-<tr><td>P-502</td><td>Filter Pump 2</td><td>Purification</td><td class="num">1</td><td class="num">$11,324</td><td>Vendor price</td></tr>
-<tr><td>P-503</td><td>RPC Pressurization Pump</td><td>Purification</td><td class="num">1</td><td class="num">$265</td><td>Vendor price</td></tr>
-<tr><td>P-504</td><td>Load Buffer Recycle Pump</td><td>Purification</td><td class="num">1</td><td class="num">$265</td><td>Vendor price</td></tr>
-<tr><td>P-505</td><td>Purified MbA to Holding Tank Pump</td><td>Purification</td><td class="num">1</td><td class="num">$2,179</td><td>Vendor price</td></tr>
-<tr><td>P-506</td><td>Purified MbA Holding Tank Outlet Pump</td><td>Purification</td><td class="num">1</td><td class="num">$2,179</td><td>Vendor price</td></tr>
-<tr><td>P-601</td><td>Product Feed Pump</td><td>Drying</td><td class="num">1</td><td class="num">$11,324</td><td>Vendor price</td></tr>
-<tr><td>T-101</td><td>Media Mixing Tank</td><td>Media sterilization</td><td class="num">1</td><td class="num">$33,690</td><td>Cost correlation</td></tr>
-<tr><td>T-102</td><td>Media Storage Tank</td><td>Media sterilization</td><td class="num">1</td><td class="num">$33,690</td><td>Cost correlation</td></tr>
-<tr><td>T-103</td><td>Sterile Feed Glucose Storage</td><td>Media sterilization</td><td class="num">1</td><td class="num">$38,603</td><td>Cost correlation</td></tr>
-<tr><td>T-301</td><td>Antifoam Storage</td><td>Fermentation</td><td class="num">2</td><td class="num">$3,860</td><td>Cost correlation</td></tr>
-<tr><td>T-302</td><td>Base Storage</td><td>Fermentation</td><td class="num">2</td><td class="num">$3,860</td><td>Cost correlation</td></tr>
-<tr><td>T-303</td><td>Acid Storage</td><td>Fermentation</td><td class="num">2</td><td class="num">$3,860</td><td>Cost correlation</td></tr>
-<tr><td>T-401</td><td>Dilution Tank</td><td>Biomass separation</td><td class="num">1</td><td class="num">$33,690</td><td>Cost correlation</td></tr>
-<tr><td>T-402</td><td>Filtration Feed Tank</td><td>Biomass separation</td><td class="num">1</td><td class="num">$17,798</td><td>Cost correlation</td></tr>
-<tr><td>T-501</td><td>Ultrafiltration Feed Tank</td><td>Purification</td><td class="num">1</td><td class="num">$22,074</td><td>Cost correlation</td></tr>
-<tr><td>T-502</td><td>Nanofiltration Feed Tank</td><td>Purification</td><td class="num">1</td><td class="num">$29,403</td><td>Cost correlation</td></tr>
-<tr><td>T-503</td><td>RPC Feed Tank</td><td>Purification</td><td class="num">1</td><td class="num">$4,621</td><td>Vendor price</td></tr>
-<tr><td>T-601</td><td>Product  Holding Tank</td><td>Drying</td><td class="num">1</td><td class="num">$5,066</td><td>Vendor price</td></tr>
-<tr><td>T-602</td><td>Storage Tank</td><td>Drying</td><td class="num">1</td><td class="num">$2,383</td><td>Vendor price</td></tr>
-<tr><td>HX-101</td><td>Sterilization Preheater</td><td>Media sterilization</td><td class="num">1</td><td class="num">$136,561</td><td>Cost correlation</td></tr>
-<tr><td>HX-102</td><td>Media Sterilizer</td><td>Media sterilization</td><td class="num">1</td><td class="num">$22,661</td><td>Cost correlation</td></tr>
-<tr><td>HX-601</td><td>Heated Air Feed Preheater</td><td>Drying</td><td class="num">1</td><td class="num">$115,699</td><td>Cost correlation</td></tr>
-<tr><td>HX-602</td><td>Heated Air Feed Heater</td><td>Drying</td><td class="num">1</td><td class="num">$103,563</td><td>Cost correlation</td></tr>
-<tr><td>V-201</td><td>Pressure Regulating Valve</td><td>Air filtration</td><td class="num">2</td><td class="num">$1,595</td><td>Vendor price</td></tr>
-<tr><td>V-301</td><td>Closed Valve</td><td>Fermentation</td><td class="num">2</td><td class="num">$158</td><td>Vendor price</td></tr>
-<tr><td>—</td><td>Isolation valves (5)</td><td>—</td><td class="num">5</td><td class="num">$394</td><td>Vendor price</td></tr>
-<tr><td>V-501</td><td>Closed Valve</td><td>Purification</td><td class="num">1</td><td class="num">$79</td><td>Vendor price</td></tr>
-<tr><td>V-502</td><td>Closed Valve</td><td>Purification</td><td class="num">1</td><td class="num">$79</td><td>Vendor price</td></tr>
-<tr><td>V-601</td><td>Heated Air Feed Pressure Regulating Valve</td><td>Drying</td><td class="num">1</td><td class="num">$1,120</td><td>Vendor price</td></tr>
-<tr><td>M-101</td><td>Media Mixer</td><td>Media sterilization</td><td class="num">1</td><td class="num">$182,300</td><td>Cost correlation</td></tr>
-<tr><td>M-301</td><td>Fermenter agitator (Rushton impeller)</td><td>Fermentation</td><td class="num">2</td><td class="num">$3,862,700</td><td>Cost correlation</td></tr>
-<tr><td>M-401</td><td>Biomass Mixer</td><td>Biomass separation</td><td class="num">1</td><td class="num">$5,020</td><td>Cost correlation</td></tr>
-<tr><td>M-402</td><td>Filtration Mixer</td><td>Biomass separation</td><td class="num">1</td><td class="num">$4,974</td><td>Estimate</td></tr>
-<tr><td>M-501</td><td>RPC Mixer</td><td>Purification</td><td class="num">1</td><td class="num">$5,881</td><td>Estimate</td></tr>
-<tr><td>F-201</td><td>Pre-Filter</td><td>Air filtration</td><td class="num">2</td><td class="num">$170</td><td>Vendor price</td></tr>
-<tr><td>F-202</td><td>Air sterilization filter, 0.4µm</td><td>Air filtration</td><td class="num">2</td><td class="num">$65,085</td><td>Vendor price</td></tr>
-<tr><td>F-203</td><td>Air sterilization filter, 0.1µm</td><td>Air filtration</td><td class="num">2</td><td class="num">$51,192</td><td>Vendor price</td></tr>
-<tr><td>F-204</td><td>Air sterilization filter, 0.1µm</td><td>Air filtration</td><td class="num">2</td><td class="num">$51,192</td><td>Vendor price</td></tr>
-<tr><td>F-301</td><td>Recycle TFF</td><td>Fermentation</td><td class="num">2</td><td class="num">$200,000</td><td>Estimate</td></tr>
-<tr><td>F-401</td><td>TFF filter</td><td>Biomass separation</td><td class="num">1</td><td class="num">$80,000</td><td>Vendor price</td></tr>
-<tr><td>F-501</td><td>TFF Ultrafilter</td><td>Purification</td><td class="num">1</td><td class="num">$77,099</td><td>Cost correlation</td></tr>
-<tr><td>F-502</td><td>TFF Nanofilter</td><td>Purification</td><td class="num">1</td><td class="num">$80,381</td><td>Cost correlation</td></tr>
-<tr><td>C-201</td><td>Saturation Tower</td><td>Air filtration</td><td class="num">2</td><td class="num">$240,795</td><td>Cost correlation</td></tr>
-<tr><td>R-301</td><td>Fed-Batch Bioreactor</td><td>Fermentation</td><td class="num">2</td><td class="num">$2,144,816</td><td>Cost correlation</td></tr>
-<tr><td>C-401</td><td>Disk Stack Centrifuge</td><td>Biomass separation</td><td class="num">1</td><td class="num">$434,224</td><td>Vendor price</td></tr>
-<tr><td>H-401</td><td>High Pressure Homogenizer</td><td>Biomass separation</td><td class="num">1</td><td class="num">$453,782</td><td>Cost correlation</td></tr>
-<tr><td>RPC-501</td><td>Reversed-Phase Chromatography Column</td><td>Purification</td><td class="num">1</td><td class="num">$643,398</td><td>Cost correlation</td></tr>
-<tr><td>SD-601</td><td>Centrifugal Spray Dryer</td><td>Drying</td><td class="num">1</td><td class="num">$11,764</td><td>Vendor price</td></tr>
-<tr><td>CN-601</td><td>Conveyor Belt</td><td>Drying</td><td class="num">1</td><td class="num">$7,000</td><td>Estimate</td></tr>
-<tr><td>CY-601</td><td>Cyclone Separator</td><td>Drying</td><td class="num">1</td><td class="num">$10,392</td><td>Estimate</td></tr>
-<tr><td>—</td><td>Coolant chiller</td><td>Fermentation</td><td class="num">1</td><td class="num">$481,758</td><td>Vendor price</td></tr>
-<tr><td>—</td><td>Seed (propagation) bioreactor, 3 L</td><td>—</td><td class="num">1</td><td class="num">$56,411</td><td>Vendor price</td></tr>
-<tr><td>—</td><td>Waste-gas air filter</td><td>—</td><td class="num">1</td><td class="num">$20,000</td><td>Estimate</td></tr>
-<tr><td>—</td><td>Waste treatment tank</td><td>—</td><td class="num">1</td><td class="num">$1,000</td><td>Estimate</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <summary>Equipment list (economic model)</summary>
+      <p class="fine">Straight from the team's economic model: $9.88M delivered equipment cost. Click a section to enlarge.</p>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/equipment-list-1.png" data-zoom alt="Equipment cost list from the economic model, part 1 of 5.">
+        </figure>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/equipment-list-2.png" data-zoom alt="Equipment cost list from the economic model, part 2 of 5.">
+        </figure>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/equipment-list-3.png" data-zoom alt="Equipment cost list from the economic model, part 3 of 5.">
+        </figure>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/equipment-list-4.png" data-zoom alt="Equipment cost list from the economic model, part 4 of 5.">
+        </figure>
+        <figure class="sheet">
+          <img src="../assets/media/capstone/equipment-list-5.png" data-zoom alt="Equipment cost list from the economic model, part 5 of 5.">
+        </figure>
     </details>
 
     <details class="legend">
