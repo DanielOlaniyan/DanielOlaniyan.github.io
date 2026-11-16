@@ -279,3 +279,19 @@ table.list td.num { white-space: nowrap; }
 figure.chart .fine { margin-top: 12px; }
 figure.sheet { margin: 10px 0 0; background: #fff; border-radius: 6px; overflow: hidden; }
 figure.sheet img { display: block; width: 100%; height: auto; cursor: zoom-in; border: 0; border-radius: 0; }
+.svgwrap { width: 100%; overflow-x: auto; }
+@media (max-width: 720px) { svg.cfchart { min-width: 640px; } }
+svg.cfchart { width: 100%; height: auto; display: block; font-family: var(--mono); }
+svg.cfchart .grid { stroke: var(--line); stroke-width: 1; }
+svg.cfchart .zero { stroke: var(--muted); stroke-width: 1; }
+svg.cfchart .ax { fill: var(--muted); font-size: 11px; }
+svg.cfchart .lab { fill: var(--text); font-size: 12px; font-family: var(--sans); }
+svg.cfchart .bar { fill: var(--accent); }
+svg.cfchart .bar.neg { fill: var(--muted); }
+svg.cfchart .bar:hover, svg.cfchart .cumdot:hover { opacity: .75; }
+svg.cfchart .cum { fill: none; stroke: var(--text); stroke-width: 2; }
+svg.cfchart .cumdot { fill: var(--text); stroke: var(--card); stroke-width: 2; }
+svg.cfchart .lead { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.key { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+.key.k1 { background: var(--accent); }
+.key.k2 { background: var(--text); border-radius: 50%; }
