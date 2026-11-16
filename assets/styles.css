@@ -295,3 +295,4 @@ svg.cfchart .lead { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3
 .key { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
 .key.k1 { background: var(--accent); }
 .key.k2 { background: var(--text); border-radius: 50%; }
+svg.cfchart .lab2 { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
