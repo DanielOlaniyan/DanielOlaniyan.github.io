@@ -251,3 +251,8 @@ details.legend ul { margin-top: 4px; }
 .doc a.thumb { display: block; }
 .doc a.thumb img { object-position: top; cursor: pointer; transition: opacity .15s; }
 .doc a.thumb:hover img { opacity: .85; }
+.figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+.figrow figure { margin: 0; }
+.figrow img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+@media (max-width: 720px) { .figrow { grid-template-columns: 1fr; } }
+.figrow { margin-bottom: 18px; }
