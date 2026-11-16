@@ -257,3 +257,23 @@ details.legend ul { margin-top: 4px; }
 @media (max-width: 720px) { .figrow { grid-template-columns: 1fr; } }
 .figrow { margin-bottom: 18px; }
 figure.hero { margin-top: 18px; }
+
+/* Equipment cost chart and data tables */
+figure.chart { margin: 20px 0 6px; }
+.chart-title { font-weight: 600; color: var(--text); margin-bottom: 10px; font-size: 15px; }
+.bars { display: grid; gap: 7px; }
+.bar { display: grid; grid-template-columns: 210px 1fr 150px; align-items: center; gap: 12px; font-size: 14px; }
+.bar .bl { color: var(--text); }
+.bar .bt { height: 12px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
+.bar .bf { display: block; height: 100%; background: var(--accent); border-radius: 3px; min-width: 2px; }
+.bar .bv { font-family: var(--mono); font-size: 13px; color: var(--text); text-align: right; white-space: nowrap; }
+.bar .bv em { font-style: normal; color: var(--muted); margin-left: 4px; }
+table.list { font-size: 13px; margin-top: 8px; }
+table.list caption { text-align: left; font-weight: 600; color: var(--text); padding: 8px 0 6px; }
+table.list td, table.list th { padding: 6px 10px; }
+@media (max-width: 720px) {
+  .bar { grid-template-columns: 1fr auto; gap: 4px 10px; }
+  .bar .bt { grid-column: 1 / -1; grid-row: 2; }
+}
+table.list td.num { white-space: nowrap; }
+figure.chart .fine { margin-top: 12px; }
