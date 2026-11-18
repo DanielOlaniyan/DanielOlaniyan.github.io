@@ -264,3 +264,19 @@ dl.skills div { display: grid; grid-template-columns: 190px 1fr; gap: 16px; }
 dl.skills dt { color: var(--text); font-weight: 600; }
 dl.skills dd { margin: 0; color: var(--body); }
 @media (max-width: 720px) { dl.skills div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Three-column intro (project About cards) */
+.lead { color: var(--text); font-size: 17px; margin: 0 0 10px; }
+.card .outcome + .grid-3 { margin-top: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+.grid-3 > div { padding: 18px 22px 0; border-left: 1px solid var(--line); }
+.grid-3 > div:first-child { padding-left: 0; border-left: 0; }
+.grid-3 > div:last-child { padding-right: 0; }
+.grid-3 h3 { font-size: 16px; margin: 0 0 8px; color: var(--text); }
+.grid-3 ul { margin: 0; padding-left: 1.1em; }
+.grid-3 li { margin: 0 0 8px; }
+@media (max-width: 860px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-3 > div { padding: 16px 0 0; border-left: 0; }
+  .grid-3 > div + div { border-top: 1px solid var(--line); margin-top: 14px; }
+}
