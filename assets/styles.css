@@ -280,3 +280,13 @@ dl.skills dd { margin: 0; color: var(--body); }
   .grid-3 > div { padding: 16px 0 0; border-left: 0; }
   .grid-3 > div + div { border-top: 1px solid var(--line); margin-top: 14px; }
 }
+
+/* Figures reproduced from the published paper */
+figure.paper { margin: 18px 0 0; }
+figure.paper img { background: #fff; border-radius: 6px; padding: 10px; width: 100%; height: auto; }
+.figrow.paperrow { align-items: start; }
+.figrow.paperrow img { aspect-ratio: auto; object-fit: contain; height: auto; }
+figure.paper:not(.figrow figure) img { max-width: 760px; display: block; margin: 0 auto; }
+figure.paper:not(.figrow figure) figcaption { max-width: 760px; margin-left: auto; margin-right: auto; }
+table.units th { text-transform: none; letter-spacing: 0; }
+.credit { display: block; margin-top: 2px; opacity: .8; }
