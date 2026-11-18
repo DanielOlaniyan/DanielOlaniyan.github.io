@@ -36,6 +36,10 @@
       <div><dt>Tools</dt><dd>Allen-Bradley HMI · Excel</dd></div>
       <div><dt>Output</dt><dd><em>Minerals Engineering</em> (2026), acknowledged</dd></div>
     </dl>
+    <figure class="hero">
+      <img src="../assets/media/sepro/hero-pilot-sample.jpg" data-zoom alt="A pilot-scale nodule sample straight after microwave treatment: thermal camera image of the crucible (left) and the treated nodules in a tray (right).">
+      <figcaption>A 5 kg sample of deep-sea nodules straight out of the pilot system (70 kW, 30 s): under the thermal camera (left) and in its tray (right). <span class="credit">Adapted from Fig. 7, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
+    </figure>
   </div>
 
   <nav class="toc" aria-label="On this page"></nav>
@@ -71,13 +75,6 @@
     </div>
   </div>
 
-  <div class="card">
-    <figure>
-      <img src="../assets/media/sepro/hmi-120kw-run.jpg" data-zoom alt="Allen-Bradley HMI during a 120 kW pilot run.">
-      <figcaption>Pilot run at 120 kW (2 × 60 kW generators) on the 140 kW system: live forward and reflected power, belt speed and cumulative energy input.</figcaption>
-    </figure>
-  </div>
-
   <div class="card" data-toc="Role">
     <div class="card-head"><span class="label">My role</span></div>
     <ul>
@@ -85,10 +82,16 @@
       <li>Analyzed moisture removal, power input, residence time and scale-up behaviour in Excel, including regression and power-density calculations for the bench-scale data.</li>
       <li>Planned and ran every bench-scale test: sample allocation, splitting, measurement and observation (details below).</li>
     </ul>
-    <figure class="notebook">
-      <img src="../assets/media/sepro/pilot-operation-checklist.jpg" data-zoom loading="lazy" alt="Pilot microwave operation checklist posted on the system: start-up, steps before each new test, and shutdown.">
-      <figcaption>The operation checklist I worked through on every pilot run: start-up, setup before each test (power, belt speed, tuner settings, counters, IR camera) and shutdown.</figcaption>
-    </figure>
+    <div class="figrow paperrow">
+      <figure>
+        <img src="../assets/media/sepro/hmi-120kw-run.jpg" data-zoom loading="lazy" alt="Allen-Bradley HMI during a 120 kW pilot run.">
+        <figcaption>Running the pilot at 120 kW (2 × 60 kW generators): live forward and reflected power, belt speed and cumulative energy input on the HMI.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/sepro/pilot-operation-checklist.jpg" data-zoom loading="lazy" alt="Pilot microwave operation checklist posted on the system: start-up, steps before each new test, and shutdown.">
+        <figcaption>The operation checklist I worked through on every pilot run: start-up, setup before each test (power, belt speed, tuner settings, counters, IR camera) and shutdown.</figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="card" data-toc="Approach">
@@ -99,6 +102,10 @@
       <li><strong>Why quartz:</strong> it's transparent to microwaves, so the energy goes into the nodules rather than the container.</li>
       <li><strong>Scale-up:</strong> compared specific energy (kWh/t) and moisture removal across scales.</li>
     </ol>
+    <figure class="notebook">
+      <img src="../assets/media/sepro/bench-quartz-crucible.jpg" data-zoom loading="lazy" alt="Gloved hand holding the clear 1 L quartz crucible after a bench test, with a thin layer of nodule residue at the bottom.">
+      <figcaption>The 1 L quartz crucible after a bench test. It stays clear because quartz barely absorbs microwaves; only a little nodule residue is left at the bottom.</figcaption>
+    </figure>
   </div>
 
   <div class="card" data-toc="Bench testing">
@@ -199,6 +206,10 @@
     </div>
     <p class="fine">5 kg samples, starting at about 19–20 °C. From Table 4 of Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, CC BY 4.0.</p>
     <figure class="paper">
+      <img src="../assets/media/sepro/paper-fig7-pilot-samples.jpg" data-zoom loading="lazy" alt="Infrared and optical images of the three pilot-scale samples after treatment.">
+      <figcaption>Pilot samples after treatment, infrared (top) and optical (bottom), at 70 kW for 30 s, 140 kW for 30 s and 140 kW for 60 s. <span class="credit">Fig. 7, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
+    </figure>
+    <figure class="paper">
       <img src="../assets/media/sepro/paper-fig13-scale-up.jpg" data-zoom loading="lazy" alt="Sample mass versus specific energy input dose for laboratory, bench and pilot tests, with a fitted regression curve.">
       <figcaption>Scale-up across laboratory, bench and pilot tests: the larger the scale, the lower the energy dose needed. <span class="credit">Fig. 13, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
     </figure>
@@ -225,10 +236,6 @@
       <figcaption>Arc count reached 5 and the system went to a safe shutdown, with both generators in cooling.</figcaption>
     </figure>
     <p>During one 120 kW run, reflected power on Generator 2 climbed to about 31 kW and the cavity's arc sensor logged five arc events; it cuts power once arcing lasts longer than its allowed time, so the system shut down. Rising reflected power usually means the load's dielectric properties are changing as it dries. That creates an impedance mismatch and sends energy back toward the generator, where a water circulator absorbs it to protect the magnetron, and it raises the risk of arcing.<!-- TODO: what you did next --></p>
-    <figure class="paper">
-      <img src="../assets/media/sepro/paper-fig7-pilot-samples.jpg" data-zoom loading="lazy" alt="Infrared and optical images of the three pilot-scale samples after treatment.">
-      <figcaption>Pilot samples after treatment, infrared (top) and optical (bottom), at 70 kW for 30 s, 140 kW for 30 s and 140 kW for 60 s. <span class="credit">Fig. 7, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
-    </figure>
   </div>
 
   <div class="card" data-toc="Documentation">
