@@ -294,3 +294,35 @@ table.units th { text-transform: none; letter-spacing: 0; }
 /* Handwritten notebook page: keep it small, click to enlarge */
 figure.notebook img { max-width: 380px; width: 100%; display: block; margin: 0 auto; border: 1px solid var(--line, #ddd); }
 figure.notebook figcaption { text-align: center; }
+
+/* ---------- Project cards with cover image ---------- */
+a.pcard { display: grid; grid-template-columns: 300px 1fr; gap: 26px; align-items: center; color: inherit; text-decoration: none; transition: border-color .15s; }
+a.pcard:hover { border-color: #2c3442; text-decoration: none; }
+a.pcard:hover .more { color: var(--text); }
+.pcard-img { border-radius: 10px; overflow: hidden; aspect-ratio: 16 / 10; background: #11141a; }
+.pcard-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.pcard-img.sheet { background: #fff; }
+.pcard-img.sheet img { object-fit: contain; padding: 8px; }
+a.pcard:hover .pcard-img img { transform: scale(1.03); }
+.pcard .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.pcard h3 { font-size: 20px; color: var(--text); margin: 8px 0 10px; line-height: 1.3; }
+.pcard p { margin: 0 0 14px; }
+.pcard .stack { display: block; font-size: 12px; line-height: 1.7; }
+.pcard .more { display: inline-block; margin-top: 14px; font-family: var(--mono); font-size: 13px; color: var(--accent); }
+@media (max-width: 720px) { a.pcard { grid-template-columns: 1fr; gap: 18px; } }
+
+/* Home: two featured projects side by side, image on top */
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.feature-grid a.pcard { grid-template-columns: 1fr; align-items: start; gap: 14px; margin: 0; padding: 0; border: 0; background: none; }
+.feature-grid .pcard h3 { font-size: 17px; }
+.feature-grid .pcard p { font-size: 15px; }
+@media (max-width: 720px) { .feature-grid { grid-template-columns: 1fr; gap: 26px; } }
+
+/* ---------- On-this-page jump bar (project pages) ---------- */
+nav.toc { position: sticky; top: 0; z-index: 20; margin: 0 0 22px; padding: 10px 0; background: rgba(7, 9, 13, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+nav.toc ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+nav.toc ul::-webkit-scrollbar { display: none; }
+nav.toc a { display: block; white-space: nowrap; font-family: var(--mono); font-size: 12.5px; color: var(--muted); padding: 6px 11px; border: 1px solid transparent; border-radius: 8px; }
+nav.toc a:hover { color: var(--text); text-decoration: none; }
+nav.toc a.on { color: var(--accent); border-color: var(--line); background: #0f1115; }
+.card[id] { scroll-margin-top: 70px; }

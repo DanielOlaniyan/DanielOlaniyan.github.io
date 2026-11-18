@@ -29,7 +29,7 @@
 
   <div class="card">
     <div class="card-head"><span class="label case">Scaling Up Microwave Dewatering of Deep-Sea Polymetallic Nodules</span></div>
-    <p>Scaling microwave dewatering of mineral feeds from a 3.2 kW bench unit to a 140 kW pilot system at Sepro Mineral Systems.</p>
+    <p>Bench-to-pilot scale-up of microwave dewatering for deep-sea polymetallic nodules at Sepro Mineral Systems, from a 3.2 kW bench unit to a 140 kW pilot system.</p>
     <dl class="facts">
       <div><dt>Organization</dt><dd>Sepro Mineral Systems</dd></div>
       <div><dt>Role</dt><dd>Metallurgical Engineering Co-op</dd></div>
@@ -38,7 +38,9 @@
     </dl>
   </div>
 
-  <div class="card">
+  <nav class="toc" aria-label="On this page"></nav>
+
+  <div class="card" data-toc="About">
     <div class="card-head"><span class="label">About this project</span></div>
     <p class="lead">Microwave dewatering of polymetallic sea nodules: can microwaves remove water more cheaply and cleanly than conventional heating?</p>
     <p class="outcome"><strong>~63%</strong> less energy per tonne at pilot scale, with up to 24% of mass removed as moisture.</p>
@@ -76,16 +78,20 @@
     </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Role">
     <div class="card-head"><span class="label">My role</span></div>
     <ul>
       <li>Operated the 140 kW pilot microwave system through its Allen-Bradley HMI: set forward power, monitored process response and responded to abnormal operating conditions.</li>
       <li>Analyzed moisture removal, power input, residence time and scale-up behaviour in Excel, including regression and power-density calculations for the bench-scale data.</li>
       <li>Planned and ran every bench-scale test: sample allocation, splitting, measurement and observation (details below).</li>
     </ul>
+    <figure class="notebook">
+      <img src="../assets/media/sepro/pilot-operation-checklist.jpg" data-zoom loading="lazy" alt="Pilot microwave operation checklist posted on the system: start-up, steps before each new test, and shutdown.">
+      <figcaption>The operation checklist I worked through on every pilot run: start-up, setup before each test (power, belt speed, tuner settings, counters, IR camera) and shutdown.</figcaption>
+    </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Approach">
     <div class="card-head"><span class="label">Approach</span></div>
     <ol>
       <li><strong>Bench:</strong> batch trials on a 3.2 kW, 2450 MHz unit, with each 200 g sample in a 1 L quartz crucible, mapping mass loss against specific energy.</li>
@@ -95,7 +101,7 @@
     </ol>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Bench testing">
     <div class="card-head"><span class="label">Sample prep and bench testing</span></div>
     <ul>
       <li><strong>Allocation:</strong> received 54.8 kg of sea nodules and set aside 4.8 kg (~8.8%) for bench-scale testing: 24 samples of 200 g each.</li>
@@ -134,7 +140,7 @@
     </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Analysis">
     <div class="card-head"><span class="label">Bench data analysis</span></div>
     <p>I tabulated mass loss for every bench test in Excel and built a model of mass loss against residence time.</p>
     <ul>
@@ -165,7 +171,7 @@
     </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Results">
     <div class="card-head"><span class="label">Results</span></div>
     <div class="table-wrap">
       <table>
@@ -198,7 +204,7 @@
     </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Generators">
     <div class="card-head"><span class="label">Generator discrepancy and recommendations</span></div>
     <p>Analyzing absorbed microwave energy patterns in Excel, I found a 7.4% discrepancy between the pilot system's two water-cooled power generators. That led to three equipment recommendations:</p>
     <ol>
@@ -212,7 +218,7 @@
     </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Abnormal conditions">
     <div class="card-head"><span class="label">Abnormal conditions</span></div>
     <figure>
       <img src="../assets/media/sepro/hmi-arc-shutdown.jpg" data-zoom alt="HMI after arc-detection shutdown: arc count 5, generators in cooling.">
@@ -225,7 +231,7 @@
     </figure>
   </div>
 
-  <div class="card">
+  <div class="card" data-toc="Documentation">
     <div class="card-head"><span class="label">Documentation</span><span class="soon">Click to open</span></div>
     <p class="fine">My sample calculations, typeset from my hand calcs.</p>
     <div class="doc-grid">
@@ -270,7 +276,7 @@
       </ul>
   </div>
   <!-- DRAFT: Daniel to reword these in his own voice before merging -->
-  <div class="card">
+  <div class="card" data-toc="Looking back">
     <div class="card-head"><span class="label">Looking back</span></div>
     <ol>
       <li><strong>Static batches caused thermal runaway.</strong> Because the nodules would melt the conveyor trays, every pilot test ran as a batch with no material movement. At 140 kW for 60 s the sample fused, and the best run removed 24 wt% against 29.2 wt% total water, likely leaving bound water behind. <em>Next time:</em> keep the material moving while it heats (a continuous line with high-temperature trays, or a rotary setup), with pulsed power control.</li>

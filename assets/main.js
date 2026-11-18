@@ -66,3 +66,30 @@ box.addEventListener('click', () => box.classList.remove('open'));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('open'); });
 
 document.querySelectorAll('[data-year]').forEach(el => (el.textContent = new Date().getFullYear()));
+
+// Project pages: build the sticky "on this page" bar from cards marked data-toc="Short name"
+const toc = document.querySelector('nav.toc');
+if (toc) {
+  const cards = [...document.querySelectorAll('.card[data-toc]')];
+  const ul = document.createElement('ul');
+  cards.forEach(c => {
+    if (!c.id) c.id = c.dataset.toc.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="#${c.id}">${c.dataset.toc}</a>`;
+    ul.appendChild(li);
+  });
+  toc.appendChild(ul);
+  const links = [...ul.querySelectorAll('a')];
+  const mark = () => {
+    let cur = null;
+    cards.forEach(c => { if (c.getBoundingClientRect().top < 120) cur = c; });
+    links.forEach(a => {
+      const on = cur && a.getAttribute('href') === '#' + cur.id;
+      a.classList.toggle('on', on);
+      if (on && !a.classList.contains('was')) ul.scrollLeft = a.offsetLeft - 40;
+      a.classList.toggle('was', on);
+    });
+  };
+  window.addEventListener('scroll', mark, { passive: true });
+  mark();
+}
