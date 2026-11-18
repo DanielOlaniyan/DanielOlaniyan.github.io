@@ -290,3 +290,7 @@ figure.paper:not(.figrow figure) img { max-width: 760px; display: block; margin:
 figure.paper:not(.figrow figure) figcaption { max-width: 760px; margin-left: auto; margin-right: auto; }
 table.units th { text-transform: none; letter-spacing: 0; }
 .credit { display: block; margin-top: 2px; opacity: .8; }
+
+/* Handwritten notebook page: keep it small, click to enlarge */
+figure.notebook img { max-width: 380px; width: 100%; display: block; margin: 0 auto; border: 1px solid var(--line, #ddd); }
+figure.notebook figcaption { text-align: center; }

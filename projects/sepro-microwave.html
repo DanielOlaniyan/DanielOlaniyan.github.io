@@ -99,11 +99,25 @@
     <div class="card-head"><span class="label">Sample prep and bench testing</span></div>
     <ul>
       <li><strong>Allocation:</strong> received 54.8 kg of sea nodules and set aside 4.8 kg (~8.8%) for bench-scale testing: 24 samples of 200 g each.</li>
-      <li><strong>Splitting:</strong> used a 24-container rotary splitter (one container per test sample), then a riffle splitter to finish allocating undersized and oversized particles.</li>
+      <li><strong>Splitting:</strong> screened at 19 mm (21% oversize, 79% undersize). The undersize went through a rotary splitter into 24 charges; two charges plus a 0.2 kg riffle split gave 3.8 kg. The oversize was cone-and-quartered down to 1 kg. The combined 4.8 kg went back through the rotary splitter into 24 samples of 200 g, each keeping the same 21/79 size split.</li>
+      <li><strong>Test plan:</strong> residence times of 30, 60, 90, 120, 180 and 240 s, each in triplicate. A 105 s set was added once melting showed up between 105 and 120 s.</li>
       <li><strong>Measurements per test:</strong> initial and final mass, surface temperature (IR camera) and bulk temperature (type K thermocouple), plus photos and notes on arcing and steam release.</li>
-      <li><strong>Quench calorimetry:</strong> helped run hot-screening and water-quench tests to measure where the heat went in a treated sample. Coarser pieces heated preferentially, consistent with their size being closer to the microwave penetration depth.</li>
+      <li><strong>Quench calorimetry:</strong> helped run hot-screening and water-quench tests to measure where the heat went in a treated sample. Right after treatment the sample was screened at 12.5 mm and each fraction quenched in 1 L of water; the water's temperature rise gave the heat each fraction held. At 105 s the coarse pieces held 77% of the heat, consistent with their size being closer to the microwave penetration depth. By 120 s the split was even, as heat conducted from the coarse pieces into the fines.</li>
       <li><strong>Arcing on the first test:</strong> arcing started almost immediately, so I stopped the test, restarted it and ended the repeat trial 5 s earlier to confirm safe operation. Arcing was expected for this material.</li>
     </ul>
+    <h3 class="sub">Where the heat went</h3>
+    <div class="table-wrap">
+      <table class="units">
+        <thead><tr><th>Heating time</th><th>Size fraction</th><th>Heat held</th><th>Water ΔT</th><th>Share of heat</th></tr></thead>
+        <tbody>
+          <tr><td>105 s</td><td>&lt; 12.5 mm</td><td class="num">8,778 J</td><td class="num">2.1 °C</td><td class="num">22.6%</td></tr>
+          <tr><td></td><td>&gt; 12.5 mm</td><td class="num">30,096 J</td><td class="num">7.2 °C</td><td class="num">77.4%</td></tr>
+          <tr><td>120 s</td><td>&lt; 12.5 mm</td><td class="num">33,858 J</td><td class="num">8.1 °C</td><td class="num">50.3%</td></tr>
+          <tr><td></td><td>&gt; 12.5 mm</td><td class="num">33,440 J</td><td class="num">8.0 °C</td><td class="num">49.7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">q = m·c<sub>p</sub>·ΔT for 1,000 g of water (c<sub>p</sub> = 4.18 J/g·°C). From Table 3 of Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, CC BY 4.0.</p>
     <div class="figrow paperrow">
     <figure class="">
       <img src="../assets/media/sepro/paper-fig1-psd.jpg" data-zoom loading="lazy" alt="Particle size distribution of the as-received nodules (cumulative percent passing).">
@@ -117,6 +131,32 @@
     <figure class="paper">
       <img src="../assets/media/sepro/paper-fig4-bench-temperature.jpg" data-zoom loading="lazy" alt="Bench-scale maximum nodule temperature versus processing time, showing a fusion zone at 105 to 120 s and thermal runaway beyond it.">
       <figcaption>Bench temperature rise: fusing began at about 105–120 s, and thermal runaway took samples past 1,000 °C by 240 s. <span class="credit">Fig. 4, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="label">Bench data analysis</span></div>
+    <p>I tabulated mass loss for every bench test in Excel and built a model of mass loss against residence time.</p>
+    <ul>
+      <li><strong>Does residence time matter?</strong> A single-factor ANOVA across the residence-time groups (α = 0.05) gave F = 622 against F<sub>crit</sub> = 3.0 (p ≈ 3 × 10⁻¹⁴). Mass loss depends strongly on residence time.</li>
+      <li><strong>First model:</strong> after trying logarithmic and logistic fits, I used M(t) = A(1 − e<sup>−kt</sup>). R² was 0.976, but the residuals followed a pattern: over-predicting at 25–60 s, under-predicting at 90–120 s and over-predicting again at 240 s. The curve had the wrong shape.</li>
+      <li><strong>Second model:</strong> adding a shape factor, M(t) = A(1 − e<sup>−(kt)<sup>p</sup></sup>), scattered the residuals evenly around zero. The sum of squared errors fell 85% (30.9 → 4.6 %²), R² rose to 0.996 and the residual standard error dropped from 1.31% to 0.52%.</li>
+      <li><strong>What the fit says:</strong> mass loss levels off at A = 31.1% (best measured: 30.8%). The time constant, 1/k ≈ 85 s, matches free water being gone by about 80 s. After that the drying rate falls sharply, because what's left is bound water.</li>
+      <li><strong>Next time:</strong> R or Python, for confidence intervals on the fitted parameters.</li>
+    </ul>
+    <div class="figrow paperrow">
+      <figure>
+        <img src="../assets/media/sepro/regression-residuals-iter1.png" data-zoom loading="lazy" alt="Residuals versus residence time for the first model, showing a clear wave pattern.">
+        <figcaption>First model: residuals swing from negative to positive and back, a sign the curve shape is wrong. Note the axis runs to ±3–4%.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/sepro/regression-residuals-iter2.png" data-zoom loading="lazy" alt="Residuals versus residence time for the second model, scattered around zero.">
+        <figcaption>Second model, with the shape factor: residuals scatter around zero with no pattern, on a tighter ±1% axis.</figcaption>
+      </figure>
+    </div>
+    <figure class="notebook">
+      <img src="../assets/media/sepro/notebook-regression.jpg" data-zoom loading="lazy" alt="Handwritten notebook page comparing the two regression model iterations and their fit statistics.">
+      <figcaption>My notebook: the fits I tried, both model iterations and their statistics. Click to enlarge.</figcaption>
     </figure>
   </div>
 
@@ -186,14 +226,8 @@
     <div class="doc-grid">
       <div class="doc">
         <div class="thumb"><img src="../assets/media/sepro/nodules-bench.jpg" data-zoom alt="Polymetallic nodules after bench-scale microwave treatment, with ruler for scale."></div>
-        <p class="cap"><span class="type">Photo</span>Nodules after bench-scale treatment, fractured by rapid internal steam generation.</p>
+        <p class="cap"><span class="type">Photo</span>Nodules after bench-scale treatment, cracked and partly fused by local thermal runaway.</p>
       </div>
-      <!-- TODO slot
-      <div class="doc">
-        <div class="thumb"><span class="ph">Add: regression plot from bench-scale workbook</span></div>
-        <p class="cap"><span class="type">Analysis</span>Mass loss vs. specific energy input.</p>
-      </div>
-      -->
       <div class="doc">
         <a class="thumb pdf" href="../assets/docs/sepro/sepro_01_seid_sample_calc.pdf" target="_blank" rel="noopener"><img src="../assets/docs/sepro/sepro_01_seid_sample_calc.png" alt="First page of the sample calculation." loading="lazy"></a>
         <p class="cap"><span class="type">Sample calc · PDF</span>Specific energy input: bench vs. pilot SEID and the 62.8% reduction.</p>
@@ -230,9 +264,15 @@
         <li><a href="https://drive.google.com/file/d/11-HhcpYalRFOzvjBoq9K0dbiG7T5raN9/view">Pilot run video, HMI control</a></li>
       </ul>
   </div>
-  <!-- TODO: Looking back card
-    <div class="card"><div class="card-head"><span class="label">Looking back</span></div><p>One or two honest lines on what you'd do differently.</p></div>
-  -->
+  <!-- DRAFT: Daniel to reword these in his own voice before merging -->
+  <div class="card">
+    <div class="card-head"><span class="label">Looking back</span></div>
+    <ol>
+      <li><strong>Static batches caused thermal runaway.</strong> Because the nodules would melt the conveyor trays, every pilot test ran as a batch with no material movement. At 140 kW for 60 s the sample fused, and the best run removed 24 wt% against 29.2 wt% total water, likely leaving bound water behind. <em>Next time:</em> keep the material moving while it heats (a continuous line with high-temperature trays, or a rotary setup), with pulsed power control.</li>
+      <li><strong>The equipment was part of the measurement.</strong> Absorbed power reflected how the two generators behaved, not only how the nodules responded: doubling the power raised it from 69.8% to 78.8%, but doubling the time didn't (76.0%). I didn't account for the generator mismatch at first. <em>Next time:</em> set limits for ramp-up time, generator balance and power stability before comparing tests; solid-state generators would remove ramp-up altogether.</li>
+      <li><strong>The bench dose was assumed; the pilot dose was measured.</strong> The bench figure assumed a constant 3.2 kW, all of it delivered. The pilot figure came from logged power, which delivered about 85% of nominal. The direction of the scale-up result holds, but the exact 62.8% carries that uncertainty. <em>Next time:</em> a directional coupler on the bench unit, so both scales are logged the same way.</li>
+    </ol>
+  </div>
 
   <div class="card">
     <div class="card-head"><span class="label">Supervisor recommendation</span></div>
