@@ -89,7 +89,7 @@
     <div class="card-head"><span class="label">Approach</span></div>
     <ol>
       <li><strong>Bench:</strong> batch trials on a 3.2 kW, 2450 MHz unit, with each 200 g sample in a 1 L quartz crucible, mapping mass loss against specific energy.</li>
-      <li><strong>Pilot:</strong> 140 kW, 915 MHz conveyorized system, run in batches: the sea nodules heated past the melting point of the conveyor's polypropylene trays, so each 5 kg charge was treated in place in a 5 L quartz crucible, set in a polypropylene bucket under an HDPE lid drilled to let steam escape.</li>
+      <li><strong>Pilot:</strong> a 915 MHz conveyorized system built by Thermowave, with two 75 kW magnetron transmitters feeding a 1 m cavity, controlled through an Allen-Bradley PLC and HMI (140 kW max setting). Run in batches: the sea nodules heated past the melting point of the conveyor's polypropylene trays, so each 5 kg charge was treated in place in a 5 L quartz crucible, set in a polypropylene bucket under an HDPE lid drilled to let steam escape.</li>
       <li><strong>Why quartz:</strong> it's transparent to microwaves, so the energy goes into the nodules rather than the container.</li>
       <li><strong>Scale-up:</strong> compared specific energy (kWh/t) and moisture removal across scales.</li>
     </ol>
@@ -218,7 +218,7 @@
       <img src="../assets/media/sepro/hmi-arc-shutdown.jpg" data-zoom alt="HMI after arc-detection shutdown: arc count 5, generators in cooling.">
       <figcaption>Arc count reached 5 and the system went to a safe shutdown, with both generators in cooling.</figcaption>
     </figure>
-    <p>During one 120 kW run, reflected power on Generator 2 climbed to about 31 kW and the arc detectors logged five arc events before the interlock shut the system down. Rising reflected power usually means the load's dielectric properties are changing as it dries. That creates an impedance mismatch, sends energy back toward the generator and raises the risk of arcing.<!-- TODO: what you did next --></p>
+    <p>During one 120 kW run, reflected power on Generator 2 climbed to about 31 kW and the cavity's arc sensor logged five arc events; it cuts power once arcing lasts longer than its allowed time, so the system shut down. Rising reflected power usually means the load's dielectric properties are changing as it dries. That creates an impedance mismatch and sends energy back toward the generator, where a water circulator absorbs it to protect the magnetron, and it raises the risk of arcing.<!-- TODO: what you did next --></p>
     <figure class="paper">
       <img src="../assets/media/sepro/paper-fig7-pilot-samples.jpg" data-zoom loading="lazy" alt="Infrared and optical images of the three pilot-scale samples after treatment.">
       <figcaption>Pilot samples after treatment, infrared (top) and optical (bottom), at 70 kW for 30 s, 140 kW for 30 s and 140 kW for 60 s. <span class="credit">Fig. 7, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
@@ -274,7 +274,7 @@
     <div class="card-head"><span class="label">Looking back</span></div>
     <ol>
       <li><strong>Static batches caused thermal runaway.</strong> Because the nodules would melt the conveyor trays, every pilot test ran as a batch with no material movement. At 140 kW for 60 s the sample fused, and the best run removed 24 wt% against 29.2 wt% total water, likely leaving bound water behind. <em>Next time:</em> keep the material moving while it heats (a continuous line with high-temperature trays, or a rotary setup), with pulsed power control.</li>
-      <li><strong>The equipment was part of the measurement.</strong> Absorbed power reflected how the two generators behaved, not only how the nodules responded: doubling the power raised it from 69.8% to 78.8%, but doubling the time didn't (76.0%). I didn't account for the generator mismatch at first. <em>Next time:</em> set limits for ramp-up time, generator balance and power stability before comparing tests; solid-state generators would remove ramp-up altogether.</li>
+      <li><strong>The equipment was part of the measurement.</strong> Absorbed power reflected how the two generators behaved, not only how the nodules responded: doubling the power raised it from 69.8% to 78.8%, but doubling the time didn't (76.0%). I didn't account for the generator mismatch at first. The second generator is there to excite more cavity modes and heat more evenly, so an imbalance between them undercuts the very uniformity it's meant to give. <em>Next time:</em> set limits for ramp-up time, generator balance and power stability before comparing tests; solid-state generators would remove ramp-up altogether.</li>
       <li><strong>The bench dose was assumed; the pilot dose was measured.</strong> The bench figure assumed a constant 3.2 kW, all of it delivered. The pilot figure came from logged power, which delivered about 85% of nominal. The direction of the scale-up result holds, but the exact 62.8% carries that uncertainty. <em>Next time:</em> a directional coupler on the bench unit, so both scales are logged the same way.</li>
     </ol>
   </div>
