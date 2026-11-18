@@ -141,8 +141,8 @@
       <li><strong>Does residence time matter?</strong> A single-factor ANOVA across the residence-time groups (α = 0.05) gave F = 622 against F<sub>crit</sub> = 3.0 (p ≈ 3 × 10⁻¹⁴). Mass loss depends strongly on residence time.</li>
       <li><strong>First model:</strong> after trying logarithmic and logistic fits, I used M(t) = A(1 − e<sup>−kt</sup>). R² was 0.976, but the residuals followed a pattern: over-predicting at 25–60 s, under-predicting at 90–120 s and over-predicting again at 240 s. The curve had the wrong shape.</li>
       <li><strong>Second model:</strong> adding a shape factor, M(t) = A(1 − e<sup>−(kt)<sup>p</sup></sup>), scattered the residuals evenly around zero. The sum of squared errors fell 85% (30.9 → 4.6 %²), R² rose to 0.996 and the residual standard error dropped from 1.31% to 0.52%.</li>
-      <li><strong>What the fit says:</strong> mass loss levels off at A = 31.1% (best measured: 30.8%). The time constant, 1/k ≈ 85 s, matches free water being gone by about 80 s. After that the drying rate falls sharply, because what's left is bound water.</li>
-      <li><strong>Next time:</strong> R or Python, for confidence intervals on the fitted parameters.</li>
+      <li><strong>What the fit says:</strong> mass loss levels off at A = 31.1% (240 s average: 30.8%). The time constant, 1/k ≈ 85 s, matches free water being gone by about 80 s. After that the drying rate falls sharply, because what's left is bound water.</li>
+      <li><strong>Follow-up in Python:</strong> Excel gave me the fit but no confidence intervals, so after the co-op I refit both models with SciPy. It reproduces the Excel numbers and adds 95% intervals: A = 31.1% (30.3–31.9), p = 1.41 (1.32–1.50), 1/k = 85 s (82–89). The interval on p excludes 1, so the shape factor reflects a real change in curve shape rather than just an extra parameter.</li>
     </ul>
     <div class="figrow paperrow">
       <figure>
@@ -154,6 +154,11 @@
         <figcaption>Second model, with the shape factor: residuals scatter around zero with no pattern, on a tighter ±1% axis.</figcaption>
       </figure>
     </div>
+    <p class="fine">Above: my original Excel charts. Below: the Python refit, with both iterations' residuals on one axis.</p>
+    <figure>
+      <img src="../assets/media/sepro/regression-python.png" data-zoom loading="lazy" alt="Left: bench mass loss versus residence time with the fitted curve and 95% confidence band. Right: residuals of both model iterations on a shared axis; iteration 1 shows a wave pattern, iteration 2 scatters tightly around zero.">
+      <figcaption>Python refit. Left: the 20 bench tests, the shape-factor model and its 95% confidence band. Right: iteration 1's residuals (blue rings) swing in a wave; iteration 2's (amber dots) stay within about ±1%.</figcaption>
+    </figure>
     <figure class="notebook">
       <img src="../assets/media/sepro/notebook-regression.jpg" data-zoom loading="lazy" alt="Handwritten notebook page comparing the two regression model iterations and their fit statistics.">
       <figcaption>My notebook: the fits I tried, both model iterations and their statistics. Click to enlarge.</figcaption>
