@@ -326,3 +326,9 @@ nav.toc a { display: block; white-space: nowrap; font-family: var(--mono); font-
 nav.toc a:hover { color: var(--text); text-decoration: none; }
 nav.toc a.on { color: var(--accent); border-color: var(--line); background: #0f1115; }
 .card[id] { scroll-margin-top: 70px; }
+
+/* Sketch -> final drawing, side by side */
+.evolve { display: grid; grid-template-columns: 1fr 1.8fr; gap: 18px; align-items: start; margin: 4px 0 18px; }
+.evolve figure { margin: 0; }
+.evolve img { width: 100%; height: auto; }
+@media (max-width: 720px) { .evolve { grid-template-columns: 1fr; } }

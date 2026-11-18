@@ -94,14 +94,16 @@
 
   <div class="card" data-toc="Heat exchangers">
     <div class="card-head"><span class="label">Heat-exchanger network</span><span class="soon">Click to enlarge</span></div>
-    <figure>
-      <img src="../assets/media/capstone/whiteboard-early-pfd-100.jpg" data-zoom alt="Early whiteboard sketch of the media sterilization train next to the first fermenter layout.">
-      <figcaption>First whiteboard sketch: the media sterilization train (left, in red) beside an early fermenter layout.</figcaption>
-    </figure>
-    <figure>
-      <img src="../assets/media/capstone/pfd-100-media-sterilization.png" data-zoom alt="PFD 100: media sterilization train with mixing tank T-101, pump P-101, preheater HX-101, steam heater HX-102, sterile storage tanks T-102 and T-103, and transfer pumps P-102 and P-103.">
-      <figcaption>PFD 100, media sterilization. Feed is pressurized to 6 atm, preheated to 125 °C in HX-101, brought to 130 °C with steam in HX-102, then sent back through HX-101 to heat the next feed and cool to 30 °C.</figcaption>
-    </figure>
+    <div class="evolve">
+      <figure>
+        <img src="../assets/media/capstone/whiteboard-early-pfd-100.jpg" data-zoom alt="Early whiteboard sketch of the media sterilization train next to the first fermenter layout.">
+        <figcaption>First whiteboard sketch: the media sterilization train (left, in red) beside an early fermenter layout.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/capstone/pfd-100-media-sterilization.png" data-zoom alt="PFD 100: media sterilization train with mixing tank T-101, pump P-101, preheater HX-101, steam heater HX-102, sterile storage tanks T-102 and T-103, and transfer pumps P-102 and P-103.">
+        <figcaption>PFD 100, media sterilization. Feed is pressurized to 6 atm, preheated to 125 °C in HX-101, brought to 130 °C with steam in HX-102, then sent back through HX-101 to heat the next feed and cool to 30 °C.</figcaption>
+      </figure>
+    </div>
     <div class="table-wrap">
       <table>
         <thead><tr><th></th><th>Media campaign</th><th>Glucose campaign</th></tr></thead>
@@ -135,31 +137,32 @@
       <img src="../assets/media/capstone/pid-sterile-feed-lines.png" data-zoom alt="P&amp;ID detail of the sterile glucose line BF-113 (3/4 inch stainless) with FT-106, FI-105, PI-104, AI-101 and analyzer controller AIC-101 driving AV-101, and the sterilized media line BF-111 (1-1/2 inch stainless) with FT-101, totalizer TOT-1 and FIC-103 driving FV-102.">
       <figcaption>My section of the bioreactor P&amp;ID: the two sterile feeds from PFD 100 into fermenter R-301.</figcaption>
     </figure>
-    <h3 class="sub">Control narratives</h3>
-    <p class="fine">From the design report.</p>
-    <div class="table-wrap">
-      <table class="narrative">
-        <caption>Media addition control loop</caption>
-        <tbody>
-          <tr><th scope="row">Description</th><td>The volume of sterilized media added to the bioreactor R-301 at the beginning of the batch process is controlled by FIC-103 and FV-102.</td></tr>
-          <tr><th scope="row">Control loop</th><td>The volume of sterilized media added to R-301 is controlled by the control loop FIC-103/FV-102. The flow rate of sterilized media into R-301 is measured by FT-101. The output of FT-101 is sent to the totalizer TOT-1, which tracks the total volume of sterilized media added to R-301. The output of TOT-1 is sent to the flow indicating controller FIC-103, whose output controls the flow valve FV-102, which modulates the flow of sterilized media into R-301.</td></tr>
-          <tr><th scope="row">Alarms</th><td>N/A</td></tr>
-          <tr><th scope="row">Trips</th><td>N/A</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="table-wrap">
-      <table class="narrative">
-        <caption>Fermenter glucose concentration control loop</caption>
-        <tbody>
-          <tr><th scope="row">Description</th><td>The concentration of glucose in the bioreactor R-301 after the batch fermentation is controlled by the addition of a concentrated aqueous glucose solution. The addition of this solution is controlled by AIC-101 and AV-101.</td></tr>
-          <tr><th scope="row">Control loop</th><td>The concentration of glucose in R-301 is controlled by the control loop AIC-101/AV-101. The current glucose concentration is read by the analyzer transmitter AT-101. The output of AT-101 is sent to the analyzer indicating controller AIC-101. The output of AIC-101 controls the valve AV-101, which dictates the flow of concentrated aqueous glucose into R-301.</td></tr>
-          <tr><th scope="row">Alarms</th><td>High (SGAH-101) and low (SGAL-101) alarms alert operators when the glucose concentration in R-301 is in danger of leaving the process specification.</td></tr>
-          <tr><th scope="row">Trips</th><td>N/A</td></tr>
-        </tbody>
-      </table>
-    </div>
     <p>Both feed valves fail closed: on a utility failure, nothing of uncertain sterility reaches the fermenter. Each line has block valves either side of the instruments and drain valves for maintenance.</p>
+    <details class="legend">
+      <summary>Control narratives (design report)</summary>
+      <div class="table-wrap">
+        <table class="narrative">
+          <caption>Media addition control loop</caption>
+          <tbody>
+            <tr><th scope="row">Description</th><td>The volume of sterilized media added to the bioreactor R-301 at the beginning of the batch process is controlled by FIC-103 and FV-102.</td></tr>
+            <tr><th scope="row">Control loop</th><td>The volume of sterilized media added to R-301 is controlled by the control loop FIC-103/FV-102. The flow rate of sterilized media into R-301 is measured by FT-101. The output of FT-101 is sent to the totalizer TOT-1, which tracks the total volume of sterilized media added to R-301. The output of TOT-1 is sent to the flow indicating controller FIC-103, whose output controls the flow valve FV-102, which modulates the flow of sterilized media into R-301.</td></tr>
+            <tr><th scope="row">Alarms</th><td>N/A</td></tr>
+            <tr><th scope="row">Trips</th><td>N/A</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table class="narrative">
+          <caption>Fermenter glucose concentration control loop</caption>
+          <tbody>
+            <tr><th scope="row">Description</th><td>The concentration of glucose in the bioreactor R-301 after the batch fermentation is controlled by the addition of a concentrated aqueous glucose solution. The addition of this solution is controlled by AIC-101 and AV-101.</td></tr>
+            <tr><th scope="row">Control loop</th><td>The concentration of glucose in R-301 is controlled by the control loop AIC-101/AV-101. The current glucose concentration is read by the analyzer transmitter AT-101. The output of AT-101 is sent to the analyzer indicating controller AIC-101. The output of AIC-101 controls the valve AV-101, which dictates the flow of concentrated aqueous glucose into R-301.</td></tr>
+            <tr><th scope="row">Alarms</th><td>High (SGAH-101) and low (SGAL-101) alarms alert operators when the glucose concentration in R-301 is in danger of leaving the process specification.</td></tr>
+            <tr><th scope="row">Trips</th><td>N/A</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
 
     <details class="legend">
       <summary>How to read the drawing</summary>
@@ -208,14 +211,16 @@
 
   <div class="card" data-toc="Biomass separation">
     <div class="card-head"><span class="label">Biomass separation</span><span class="soon">Click to enlarge</span></div>
-    <figure>
-      <img src="../assets/media/capstone/whiteboard-early-downstream.jpg" data-zoom alt="Early whiteboard sketch of downstream processing with a list of open questions.">
-      <figcaption>Early downstream sketch, with the questions we still had to answer: what cleaning really involves, how many centrifuge passes, and whether to centrifuge or filter first.</figcaption>
-    </figure>
-    <figure>
-      <img src="../assets/media/capstone/pfd-400-biomass-separation.png" data-zoom alt="PFD 400: harvest stream diluted in T-401, concentrated in disk-stack centrifuge C-401, lysed in high-pressure homogenizer H-401, then filtered through F-401 with permeate to purification and biomass to waste treatment.">
-      <figcaption>PFD 400. The harvest is diluted (T-401), concentrated in a disk-stack centrifuge (C-401), lysed in a high-pressure homogenizer (H-401), then filtered (F-401): permeate carries MbA to purification, and spent biomass goes to waste treatment.</figcaption>
-    </figure>
+    <div class="evolve">
+      <figure>
+        <img src="../assets/media/capstone/whiteboard-early-downstream.jpg" data-zoom alt="Early whiteboard sketch of downstream processing with a list of open questions.">
+        <figcaption>Early downstream sketch, with the questions we still had to answer: what cleaning really involves, how many centrifuge passes, and whether to centrifuge or filter first.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/media/capstone/pfd-400-biomass-separation.png" data-zoom alt="PFD 400: harvest stream diluted in T-401, concentrated in disk-stack centrifuge C-401, lysed in high-pressure homogenizer H-401, then filtered through F-401 with permeate to purification and biomass to waste treatment.">
+        <figcaption>PFD 400. The harvest is diluted (T-401), concentrated in a disk-stack centrifuge (C-401), lysed in a high-pressure homogenizer (H-401), then filtered (F-401): permeate carries MbA to purification, and spent biomass goes to waste treatment.</figcaption>
+      </figure>
+    </div>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Step</th><th>Design point</th><th>Result</th></tr></thead>
