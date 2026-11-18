@@ -105,11 +105,13 @@
       </figure>
     </div>
     <div class="table-wrap">
-      <table>
+      <table class="units">
         <thead><tr><th></th><th>Media campaign</th><th>Glucose campaign</th></tr></thead>
         <tbody>
-          <tr><td>HX-101 preheater (heat recovery)</td><td class="num">835.6 kW · 196.2 m²</td><td class="num">824.8 kW · 193.7 m²</td></tr>
-          <tr><td>HX-102 steam heater</td><td class="num">41.8 kW · 0.16 m²</td><td class="num">41.2 kW · 0.16 m²</td></tr>
+          <tr><td>HX-101 preheater (heat recovery): duty (kW)</td><td class="num">835.6</td><td class="num">824.8</td></tr>
+          <tr><td>HX-101 preheater: area (m²)</td><td class="num">196.2</td><td class="num">193.7</td></tr>
+          <tr><td>HX-102 steam heater: duty (kW)</td><td class="num">41.8</td><td class="num">41.2</td></tr>
+          <tr><td>HX-102 steam heater: area (m²)</td><td class="num">0.16</td><td class="num">0.16</td></tr>
         </tbody>
       </table>
     </div>
@@ -222,12 +224,23 @@
       </figure>
     </div>
     <div class="table-wrap">
-      <table>
-        <thead><tr><th>Step</th><th>Design point</th><th>Result</th></tr></thead>
+      <table class="units">
+        <thead><tr><th>Unit</th><th>Parameter</th><th>Value</th></tr></thead>
         <tbody>
-          <tr><td>Centrifuge wash (C-401)</td><td class="num">35 m³/h, 10 passes</td><td class="num">4.5 h · 99.0% of cells kept</td></tr>
-          <tr><td>Microfiltration (F-401)</td><td class="num">320 m², 0.2 µm, 4 bar max</td><td class="num">2.1 h + 3.2 h · 98.3% MbA recovery</td></tr>
-          <tr><td>Holding tanks</td><td class="num">T-401 18 m³ · T-402 5.2 m³</td><td class="num">Agitators 3.5 kW · 1.5 kW</td></tr>
+          <tr><td>Centrifuge wash (C-401)</td><td>Flow rate (m³/h)</td><td class="num">35</td></tr>
+          <tr><td></td><td>Wash passes (–)</td><td class="num">10</td></tr>
+          <tr><td></td><td>Wash time (h)</td><td class="num">4.5</td></tr>
+          <tr><td></td><td>Cells retained (%)</td><td class="num">99.0</td></tr>
+          <tr><td>Microfiltration (F-401)</td><td>Membrane area (m²)</td><td class="num">320</td></tr>
+          <tr><td></td><td>Pore size (µm)</td><td class="num">0.2</td></tr>
+          <tr><td></td><td>Maximum transmembrane pressure (bar)</td><td class="num">4</td></tr>
+          <tr><td></td><td>Concentration time (h)</td><td class="num">2.1</td></tr>
+          <tr><td></td><td>Diafiltration time (h)</td><td class="num">3.2</td></tr>
+          <tr><td></td><td>MbA recovery (%)</td><td class="num">98.3</td></tr>
+          <tr><td>Holding tanks</td><td>T-401 volume (m³)</td><td class="num">18</td></tr>
+          <tr><td></td><td>T-402 volume (m³)</td><td class="num">5.2</td></tr>
+          <tr><td></td><td>T-401 agitator power (kW)</td><td class="num">3.5</td></tr>
+          <tr><td></td><td>T-402 agitator power (kW)</td><td class="num">1.5</td></tr>
         </tbody>
       </table>
     </div>
@@ -244,16 +257,17 @@
     <p>I built the plant's economic model, from equipment costs through capital, operating cost, revenue and financed cash flow to profitability, to inform the final go/no-go decision.</p>
     <p>The model in our final presentation showed the first design falling short of our 12% minimum return. After that feedback I reworked it for the final report: fill-and-finish moved to a contract facility, MbA sold in bulk at $0.85 per dose instead of $1.00, and the loan spread over 20 years instead of 10, matching the plant life and easing early cash flow. The revised plant reached a 17% real IRR.</p>
     <div class="table-wrap">
-      <table>
+      <table class="units">
         <tbody>
-          <tr><td>Delivered equipment cost</td><td class="num">$9.9M</td></tr>
-          <tr><td>Fixed capital investment</td><td class="num">$75.7M</td></tr>
-          <tr><td>Total capital investment (incl. working capital)</td><td class="num">$86.8M</td></tr>
-          <tr><td>Revenue ($0.85 per 50 mg dose)</td><td class="num">$63.1M / yr</td></tr>
-          <tr><td>Operating cost</td><td class="num">$48.1M / yr</td></tr>
-          <tr><td>IRR on equity, after tax: nominal / real</td><td class="num">21.7% / 17.0%</td></tr>
-          <tr><td>Net present worth (12.9% after-tax MARR)</td><td class="num">$27.9M</td></tr>
-          <tr><td>Benefit–cost ratio</td><td class="num">1.84</td></tr>
+          <tr><td>Delivered equipment cost ($M)</td><td class="num">9.9</td></tr>
+          <tr><td>Fixed capital investment ($M)</td><td class="num">75.7</td></tr>
+          <tr><td>Total capital investment, incl. working capital ($M)</td><td class="num">86.8</td></tr>
+          <tr><td>Revenue at $0.85 per 50 mg dose ($M/yr)</td><td class="num">63.1</td></tr>
+          <tr><td>Operating cost ($M/yr)</td><td class="num">48.1</td></tr>
+          <tr><td>IRR on equity, after tax, nominal (%)</td><td class="num">21.7</td></tr>
+          <tr><td>IRR on equity, after tax, real (%)</td><td class="num">17.0</td></tr>
+          <tr><td>Net present worth at 12.9% after-tax MARR ($M)</td><td class="num">27.9</td></tr>
+          <tr><td>Benefit–cost ratio (–)</td><td class="num">1.84</td></tr>
         </tbody>
       </table>
     </div>
