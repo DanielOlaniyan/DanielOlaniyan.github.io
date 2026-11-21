@@ -67,29 +67,72 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classLis
 
 document.querySelectorAll('[data-year]').forEach(el => (el.textContent = new Date().getFullYear()));
 
-// Project pages: build the sticky "on this page" bar from cards marked data-toc="Short name"
+// Project pages: the section bar works as tabs. Each tab shows one section;
+// untagged cards ride along with the section before them. "View all" shows everything.
 const toc = document.querySelector('nav.toc');
 if (toc) {
-  const cards = [...document.querySelectorAll('.card[data-toc]')];
+  const after = [...document.querySelectorAll('main .card')]
+    .filter(c => toc.compareDocumentPosition(c) & Node.DOCUMENT_POSITION_FOLLOWING);
+  const groups = [];
+  let pending = [];
+  after.forEach(c => {
+    if (c.dataset.toc) {
+      if (!c.id) c.id = c.dataset.toc.toLowerCase().replace(/&amp;|&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      groups.push({ id: c.id, name: c.dataset.toc, cards: [...pending, c] });
+      pending = [];
+    } else if (groups.length) groups[groups.length - 1].cards.push(c);
+    else pending.push(c);
+  });
+
   const ul = document.createElement('ul');
-  cards.forEach(c => {
-    if (!c.id) c.id = c.dataset.toc.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const tabs = [...groups, { id: 'all', name: 'View all', cards: after }];
+  tabs.forEach(g => {
     const li = document.createElement('li');
-    li.innerHTML = `<a href="#${c.id}">${c.dataset.toc}</a>`;
+    li.innerHTML = `<a href="#${g.id}"${g.id === 'all' ? ' class="all"' : ''}>${g.name}</a>`;
     ul.appendChild(li);
   });
   toc.appendChild(ul);
   const links = [...ul.querySelectorAll('a')];
-  const mark = () => {
-    let cur = null;
-    cards.forEach(c => { if (c.getBoundingClientRect().top < 120) cur = c; });
+
+  // previous / next links at the foot of each section
+  groups.forEach((g, i) => {
+    const nav = document.createElement('div');
+    nav.className = 'tabnav';
+    const prev = groups[i - 1], next = groups[i + 1];
+    nav.innerHTML = (prev ? `<a href="#${prev.id}">← ${prev.name}</a>` : '<span></span>') +
+                    (next ? `<a href="#${next.id}">${next.name} →</a>` : '<span></span>');
+    g.cards[g.cards.length - 1].appendChild(nav);
+  });
+
+  const anchor = document.createElement('div');
+  toc.before(anchor);
+
+  const show = (id, scroll) => {
+    let g = tabs.find(t => t.id === id);
+    if (!g) {                                   // a link to something inside a section
+      const el = id && document.getElementById(id);
+      g = el ? groups.find(t => t.cards.some(c => c.contains(el))) : null;
+    }
+    if (!g) g = groups[0];
+    document.body.classList.toggle('tabbed', g.id !== 'all');
+    after.forEach(c => { c.hidden = g.id !== 'all' && !g.cards.includes(c); });
     links.forEach(a => {
-      const on = cur && a.getAttribute('href') === '#' + cur.id;
+      const on = a.getAttribute('href') === '#' + g.id;
       a.classList.toggle('on', on);
-      if (on && !a.classList.contains('was')) ul.scrollLeft = a.offsetLeft - 40;
-      a.classList.toggle('was', on);
+      if (on) ul.scrollLeft = a.offsetLeft - 40;
     });
+    if (scroll && window.scrollY > anchor.offsetTop) window.scrollTo({ top: anchor.offsetTop });
   };
-  window.addEventListener('scroll', mark, { passive: true });
-  mark();
+
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    if (!tabs.some(t => t.id === id)) return;
+    e.preventDefault();
+    history.replaceState(null, '', '#' + id);
+    show(id, true);
+  });
+  window.addEventListener('hashchange', () => show(location.hash.slice(1), true));
+  show(location.hash.slice(1), false);
 }

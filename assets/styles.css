@@ -350,3 +350,9 @@ ul.decide li:last-child { border-bottom: 0; }
 ul.decide .d { font-family: var(--mono); font-size: 12.5px; color: var(--accent); padding-top: 2px; }
 ul.decide strong { color: var(--text); }
 @media (max-width: 620px) { ul.decide li { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Section tabs on project pages */
+nav.toc a.all { color: var(--muted); border-style: dashed; border-color: var(--line); }
+.tabnav { display: none; justify-content: space-between; gap: 12px; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 13px; }
+body.tabbed .tabnav { display: flex; }
+.tabnav a { color: var(--accent); }
