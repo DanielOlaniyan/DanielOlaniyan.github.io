@@ -78,15 +78,18 @@
 
   <div class="card" data-toc="Process">
     <div class="card-head"><span class="label">The process</span></div>
-    <p>A greenfield plant in Montreal, Quebec. MbA builds up inside the yeast cells, so the biomass is the product stream. The plant runs in six areas:</p>
-    <ol>
-      <li><strong>Media sterilization (100):</strong> one heat-sterilization train serves both the start-up media (about 14 m³ in 2 hours) and the fed-batch glucose feed (about 21 t in 3 hours), each into its own sterile storage tank.</li>
-      <li><strong>Air filtration (200):</strong> sterile air for the fermenters.</li>
-      <li><strong>Fermentation (300):</strong> two 20 m³ fed-batch fermenters at 16 m³ working volume, on a 48-hour cycle (36 h fermentation, 2 h emptying, 10 h cleaning).</li>
-      <li><strong>Lysis and separation (400):</strong> centrifuge cell washing, high-pressure homogenization to release MbA, then filtration.</li>
-      <li><strong>Purification (500):</strong> two ultrafiltration steps, then reversed-phase chromatography to 95% MbA and 5% MbB.</li>
-      <li><strong>Drying (600):</strong> spray drying to a powder, sold in bulk to a fill-and-finish partner.</li>
-    </ol>
+    <p>A greenfield plant in Montreal, Quebec. MbA builds up inside the yeast cells, so the plant grows the cells, breaks them open, then separates, purifies and dries the product.</p>
+    <details class="legend">
+      <summary>The six process areas</summary>
+      <ol>
+        <li><strong>Media sterilization (100):</strong> one heat-sterilization train serves both the start-up media (about 14 m³ in 2 hours) and the fed-batch glucose feed (about 21 t in 3 hours), each into its own sterile storage tank.</li>
+        <li><strong>Air filtration (200):</strong> sterile air for the fermenters.</li>
+        <li><strong>Fermentation (300):</strong> two 20 m³ fed-batch fermenters at 16 m³ working volume, on a 48-hour cycle (36 h fermentation, 2 h emptying, 10 h cleaning).</li>
+        <li><strong>Lysis and separation (400):</strong> centrifuge cell washing, high-pressure homogenization to release MbA, then filtration.</li>
+        <li><strong>Purification (500):</strong> two ultrafiltration steps, then reversed-phase chromatography to 95% MbA and 5% MbB.</li>
+        <li><strong>Drying (600):</strong> spray drying to a powder, sold in bulk to a fill-and-finish partner.</li>
+      </ol>
+    </details>
     <figure>
       <img src="../assets/media/capstone/block-flow-diagram.png" data-zoom alt="Block flow diagram: yeast preparation, media sterilization and air filtration feed the bioreactor, followed by cell lysis, biomass separation, purification and drying to purified MbA, with waste air, waste treatment and disposal streams.">
       <figcaption>Block flow diagram: steps to produce purified MbA from bioengineered <em>S. cerevisiae</em>, with flows per batch (team figure).</figcaption>
@@ -94,30 +97,28 @@
 
     <h3 class="sub">Design basis</h3>
     <ul>
-      <li><strong>No MbA production data existed,</strong> so the design used literature values for naringenin, a similar molecule: a maximum growth rate of 0.44 h⁻¹ and a titer of 0.8 kg/m³.</li>
-      <li><strong>Plant size:</strong> built around two 20 m³ fermenters, one of the largest standard sizes. At that titer they make about 3,700 kg of MbA a year.</li>
-      <li><strong>Against the sponsor's target</strong> of 100,000 kg a year, one plant's output sets how many plants would be needed: about 27. That makes titer the number that matters most.</li>
-      <li><strong>Margins:</strong> MbA's effect on viscosity and heat capacity was unknown, so units downstream of the fermenter were sized with generous margins.</li>
+      <li><strong>No MbA production data existed,</strong> so the design used literature values for naringenin, a similar molecule (titer 0.8 kg/m³).</li>
+      <li><strong>Two 20 m³ fermenters</strong>, one of the largest standard sizes, make about 3,700 kg a year: roughly 27 plants to reach the sponsor's 100,000 kg target.</li>
     </ul>
 
-    <h3 class="sub">Key design decisions</h3>
-    <div class="table-wrap">
-      <table class="decisions">
-        <thead><tr><th>Decision</th><th>Options considered</th><th>Chosen</th><th>Why</th></tr></thead>
-        <tbody>
-          <tr><td><span class="mine" title="An area I designed">●</span>Media sterilization</td><td>Batch vs. continuous</td><td>Semi-continuous, one shared train with heat recovery; held at 130 °C for 3 min</td><td>Supports back-to-back batches; one train for both media and glucose feed cuts capital, and a preheater that also cools the sterile stream cuts energy</td></tr>
-          <tr><td>Air sterilization</td><td>Storing sterile air vs. continuous filtration</td><td>Continuous hydrophobic-membrane filters</td><td>The fermenters need too much air to store; filters handle variable flow at a low pressure drop</td></tr>
-          <tr><td>Fermentation mode</td><td>Continuous vs. batch; then batch vs. fed-batch</td><td>Two-stage fed-batch in two 20 m³ fermenters</td><td>Batch is the bioprocess standard and simpler to model; fed-batch gives higher yield and growth control, and slowing growth in stage 2 keeps oxygen demand within what the fermenter can supply</td></tr>
-          <tr><td><span class="mine" title="An area I designed">●</span>Cell washing</td><td>Filtration vs. centrifugation; tubular-bowl vs. disc-stack</td><td>Disc-stack centrifuge</td><td>Stacked discs give far more separating area, which the batch volume and throughput need; tubular bowls are easier to run but too small</td></tr>
-          <tr><td><span class="mine" title="An area I designed">●</span>Cell lysis</td><td>Not compared (industry standard)</td><td>High-pressure homogenizer</td><td>MbA stays inside the cells, and homogenization is the industry standard for releasing intracellular products from <em>S. cerevisiae</em></td></tr>
-          <tr><td><span class="mine" title="An area I designed">●</span>Debris removal</td><td>Rotary vacuum vs. tangential-flow filtration (TFF)</td><td>0.2 µm TFF</td><td>Suits batch operation and retains cells better; rotary vacuum filters are built for continuous use and often need a flocculant, unwanted in pharmaceutical production. Trade-off: higher capital</td></tr>
-          <tr><td>Purification, stage 1</td><td>Size-exclusion chromatography vs. ultrafiltration</td><td>Two ultrafiltration steps</td><td>Higher throughput, treats the whole batch at once and concentrates MbA; yeast proteins are too diverse for anything but size-based separation here</td></tr>
-          <tr><td>Purification, stage 2</td><td>Size-exclusion vs. reversed-phase chromatography</td><td>Reversed-phase column with a resin matching the sponsor's lab method</td><td>Separates MbA from MbB by hydrophobicity and scales up the lab process; size exclusion takes only about 1 L per pulse</td></tr>
-          <tr><td>Drying</td><td>Freeze-drying vs. spray drying vs. vacuum spray drying</td><td>Spray drying at 180 °C</td><td>Freeze-drying is too slow and energy-hungry at scale; MbA is heat-stable and the acetonitrile solvent evaporates readily, so vacuum drying isn't needed</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="fine">Each decision was made as a team using a decision tree. Rows marked <span class="mine">●</span> are in the areas I designed (PFD 100 and PFD 400).</p>
+    <h3 class="sub">Key design decisions in my areas</h3>
+    <ul class="decide">
+        <li><span class="d">Media sterilization</span><span><strong>Semi-continuous shared train with heat recovery</strong>, over batch: one train serves both feeds, and the preheater cuts steam use.</span></li>
+        <li><span class="d">Cell washing</span><span><strong>Disc-stack centrifuge</strong>, over tubular bowl: more separating area for the batch throughput.</span></li>
+        <li><span class="d">Cell lysis</span><span><strong>High-pressure homogenizer</strong>: the industry standard for releasing products held inside yeast cells.</span></li>
+        <li><span class="d">Debris removal</span><span><strong>0.2 µm tangential-flow filtration</strong>, over rotary vacuum: suits batch operation and needs no flocculant, at a higher capital cost.</span></li>
+    </ul>
+    <details class="legend">
+      <summary>Other team decisions (5)</summary>
+      <ul class="decide">
+          <li><span class="d">Air sterilization</span><span><strong>Continuous membrane filters</strong>, over stored sterile air: the fermenters need too much air to store.</span></li>
+          <li><span class="d">Fermentation</span><span><strong>Two-stage fed-batch</strong>, over batch or continuous: higher yield, and slower growth in stage 2 keeps oxygen demand within supply.</span></li>
+          <li><span class="d">Purification 1</span><span><strong>Ultrafiltration</strong>, over size-exclusion chromatography: higher throughput, and it concentrates MbA.</span></li>
+          <li><span class="d">Purification 2</span><span><strong>Reversed-phase chromatography</strong>: separates MbA from MbB and scales up the sponsor's lab method.</span></li>
+          <li><span class="d">Drying</span><span><strong>Spray drying at 180 °C</strong>, over freeze-drying: faster and cheaper at scale, and MbA is heat-stable.</span></li>
+      </ul>
+    </details>
+    <p class="fine">Every unit was chosen as a team, using a decision tree for each.</p>
   </div>
 
   <div class="card" data-toc="Heat exchangers">

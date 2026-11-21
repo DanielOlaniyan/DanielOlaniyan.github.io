@@ -343,11 +343,10 @@ nav.toc a.on { color: var(--accent); border-color: var(--line); background: #0f1
 @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 460px) { .steps { grid-template-columns: 1fr; } }
 
-/* Design decisions table */
-table.decisions { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 760px; }
-table.decisions th { text-align: left; font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 0 12px 10px 0; border-bottom: 1px solid var(--line); }
-table.decisions td { vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); line-height: 1.5; }
-table.decisions td:first-child { color: var(--text); font-weight: 600; width: 15%; }
-table.decisions td:nth-child(2) { width: 22%; }
-table.decisions td:nth-child(3) { color: var(--text); width: 23%; }
-.mine { color: var(--accent); margin-right: 6px; font-size: 11px; }
+/* Design decisions: one line each */
+ul.decide { list-style: none; padding: 0; margin: 6px 0 12px; }
+ul.decide li { display: grid; grid-template-columns: 170px 1fr; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--line); margin: 0; }
+ul.decide li:last-child { border-bottom: 0; }
+ul.decide .d { font-family: var(--mono); font-size: 12.5px; color: var(--accent); padding-top: 2px; }
+ul.decide strong { color: var(--text); }
+@media (max-width: 620px) { ul.decide li { grid-template-columns: 1fr; gap: 2px; } }
