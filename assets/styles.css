@@ -356,3 +356,12 @@ nav.toc a.all { color: var(--muted); border-style: dashed; border-color: var(--l
 .tabnav { display: none; justify-content: space-between; gap: 12px; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 13px; }
 body.tabbed .tabnav { display: flex; }
 .tabnav a { color: var(--accent); }
+
+/* Key numbers under a project title */
+.keynums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 22px 0 18px; }
+.keynums div { background: #0f1115; padding: 14px 16px; }
+.keynums b { display: block; font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--accent); letter-spacing: -0.01em; }
+.keynums span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: var(--muted); }
+@media (max-width: 720px) { .keynums { grid-template-columns: 1fr 1fr; } }
+/* One-line summary at the top of a section */
+.gist { color: var(--text); font-size: 17px; line-height: 1.5; margin: 0 0 16px; }
