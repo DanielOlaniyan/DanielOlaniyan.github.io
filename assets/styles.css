@@ -342,3 +342,12 @@ nav.toc a.on { color: var(--accent); border-color: var(--line); background: #0f1
 .step p { margin: 0; font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 460px) { .steps { grid-template-columns: 1fr; } }
+
+/* Design decisions table */
+table.decisions { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 760px; }
+table.decisions th { text-align: left; font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 0 12px 10px 0; border-bottom: 1px solid var(--line); }
+table.decisions td { vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); line-height: 1.5; }
+table.decisions td:first-child { color: var(--text); font-weight: 600; width: 15%; }
+table.decisions td:nth-child(2) { width: 22%; }
+table.decisions td:nth-child(3) { color: var(--text); width: 23%; }
+.mine { color: var(--accent); margin-right: 6px; font-size: 11px; }
