@@ -342,3 +342,11 @@ nav.toc a.on { color: var(--accent); border-color: var(--line); background: #0f1
 .step p { margin: 0; font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 460px) { .steps { grid-template-columns: 1fr; } }
+
+/* Design decisions: one line each */
+ul.decide { list-style: none; padding: 0; margin: 6px 0 12px; }
+ul.decide li { display: grid; grid-template-columns: 170px 1fr; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--line); margin: 0; }
+ul.decide li:last-child { border-bottom: 0; }
+ul.decide .d { font-family: var(--mono); font-size: 12.5px; color: var(--accent); padding-top: 2px; }
+ul.decide strong { color: var(--text); }
+@media (max-width: 620px) { ul.decide li { grid-template-columns: 1fr; gap: 2px; } }
