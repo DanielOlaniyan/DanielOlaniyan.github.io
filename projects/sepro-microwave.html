@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/styles.css?v=20261120b">
+  <link rel="stylesheet" href="../assets/styles.css?v=20261120c">
 </head>
 <body>
 
@@ -37,6 +37,12 @@
       <div><dt>Tools</dt><dd>Allen-Bradley HMI · Excel · Python</dd></div>
       <div><dt>Output</dt><dd><em>Minerals Engineering</em> (2026), acknowledged</dd></div>
     </dl>
+    <div class="keynums">
+      <div><b>62.8%</b><span>less energy per tonne, bench to pilot</span></div>
+      <div><b>140 kW</b><span>pilot system, up from a 3.2 kW bench unit</span></div>
+      <div><b>24%</b><span>of mass removed at pilot scale</span></div>
+      <div><b>R² 0.996</b><span>my bench mass-loss model</span></div>
+    </div>
     <figure class="hero">
       <img src="../assets/media/sepro/hero-pilot-sample.jpg" data-zoom alt="A pilot-scale nodule sample straight after microwave treatment: thermal camera image of the crucible (left) and the treated nodules in a tray (right).">
       <figcaption>A 5 kg sample of deep-sea nodules straight out of the pilot system (70 kW, 30 s): under the thermal camera (left) and in its tray (right). <span class="credit">Adapted from Fig. 7, Marzoughi et al. (2026), <em>Minerals Engineering</em> 235, 109879, <a href="https://doi.org/10.1016/j.mineng.2025.109879" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption>
@@ -76,8 +82,9 @@
     </div>
   </div>
 
-  <div class="card" data-toc="Role">
+  <div class="card" data-toc="Role &amp; approach">
     <div class="card-head"><span class="label">My role</span></div>
+    <p class="gist">I ran the pilot system, planned every bench test and analyzed the data.</p>
     <ul>
       <li>Operated the 140 kW pilot microwave system through its Allen-Bradley HMI: set forward power, monitored process response and responded to abnormal operating conditions.</li>
       <li>Analyzed moisture removal, power input, residence time and scale-up behaviour in Excel, including regression and power-density calculations for the bench-scale data.</li>
@@ -95,8 +102,9 @@
     </div>
   </div>
 
-  <div class="card" data-toc="Approach">
+  <div class="card">
     <div class="card-head"><span class="label">Approach</span></div>
+    <p class="gist">Same nodules, two scales: 200 g at 3.2 kW on the bench, 5 kg at up to 140 kW in the pilot.</p>
     <ol>
       <li><strong>Bench:</strong> batch trials on a 3.2 kW, 2450 MHz unit, with each 200 g sample in a 1 L quartz crucible, mapping mass loss against specific energy.</li>
       <li><strong>Pilot:</strong> a 915 MHz conveyorized system built by Thermowave, with two 75 kW magnetron transmitters feeding a 1 m cavity, controlled through an Allen-Bradley PLC and HMI (140 kW max setting). Run in batches: the sea nodules heated past the melting point of the conveyor's polypropylene trays, so each 5 kg charge was treated in place in a 5 L quartz crucible, set in a polypropylene bucket under an HDPE lid drilled to let steam escape.</li>
@@ -111,6 +119,7 @@
 
   <div class="card" data-toc="Bench testing">
     <div class="card-head"><span class="label">Sample prep and bench testing</span></div>
+    <p class="gist">Every sample was split to match the as-received size distribution, so each residence time could be compared fairly.</p>
     <ul>
       <li><strong>Allocation:</strong> received 54.8 kg of sea nodules and set aside 4.8 kg (~8.8%) for bench-scale testing: 24 samples of 200 g each.</li>
       <li><strong>Splitting:</strong> screened at 19 mm (21% oversize, 79% undersize). The undersize went through a rotary splitter into 24 charges; two charges plus a 0.2 kg riffle split gave 3.8 kg. The oversize was cone-and-quartered down to 1 kg. The combined 4.8 kg went back through the rotary splitter into 24 samples of 200 g, each keeping the same 21/79 size split.</li>
@@ -209,6 +218,7 @@
 
   <div class="card" data-toc="Analysis">
     <div class="card-head"><span class="label">Bench data analysis</span></div>
+    <p class="gist">My model of mass loss against time fits the data within about ±1%, and shows free water gone by about 80 s.</p>
     <p>I tabulated mass loss for every bench test in Excel and built a model of mass loss against residence time.</p>
     <ul>
       <li><strong>Does residence time matter?</strong> A single-factor ANOVA across the residence-time groups (α = 0.05) gave F = 622 against F<sub>crit</sub> = 3.0 (p ≈ 3 × 10⁻¹⁴). Mass loss depends strongly on residence time.</li>
@@ -240,6 +250,7 @@
 
   <div class="card" data-toc="Results">
     <div class="card-head"><span class="label">Results</span></div>
+    <p class="gist">The pilot needed 62.8% less energy per tonne than the bench unit.</p>
     <div class="table-wrap">
       <table class="units">
         <thead><tr><th></th><th>Bench</th><th>Pilot</th></tr></thead>
@@ -251,7 +262,6 @@
         </tbody>
       </table>
     </div>
-    <p>Specific energy input fell 62.8% from bench to pilot.</p>
     <h3 class="sub">The three pilot tests</h3>
     <div class="table-wrap">
       <table class="units">
@@ -278,8 +288,9 @@
     </figure>
   </div>
 
-  <div class="card" data-toc="Generators">
+  <div class="card" data-toc="Pilot operation">
     <div class="card-head"><span class="label">Generator discrepancy and recommendations</span></div>
+    <p class="gist">The pilot's two generators didn't deliver power evenly, which led to three equipment recommendations.</p>
     <p>Analyzing absorbed microwave energy patterns in Excel, I found a 7.4% discrepancy between the pilot system's two water-cooled power generators. That led to three equipment recommendations:</p>
     <ol>
       <li><strong>Switch to solid-state RF generators</strong> in place of the magnetron tube generators.</li>
@@ -292,8 +303,9 @@
     </figure>
   </div>
 
-  <div class="card" data-toc="Abnormal conditions">
+  <div class="card">
     <div class="card-head"><span class="label">Abnormal conditions</span></div>
+    <p class="gist">Reflected power climbed as the load dried, until the arc sensor shut the system down.</p>
     <figure>
       <img src="../assets/media/sepro/hmi-arc-shutdown.jpg" data-zoom alt="HMI after arc-detection shutdown: arc count 5, generators in cooling.">
       <figcaption>Arc count reached 5 and the system went to a safe shutdown, with both generators in cooling.</figcaption>
@@ -301,7 +313,17 @@
     <p>During one 120 kW run, reflected power on Generator 2 climbed to about 31 kW and the cavity's arc sensor logged five arc events; it cuts power once arcing lasts longer than its allowed time, so the system shut down. Rising reflected power usually means the load's dielectric properties are changing as it dries. That creates an impedance mismatch and sends energy back toward the generator, where a water circulator absorbs it to protect the magnetron, and it raises the risk of arcing.<!-- TODO: what you did next --></p>
   </div>
 
-  <div class="card" data-toc="Documentation">
+  <!-- DRAFT: Daniel to reword these in his own voice before merging -->
+  <div class="card" data-toc="Looking back">
+    <div class="card-head"><span class="label">Looking back</span></div>
+    <ol>
+      <li><strong>Static batches caused thermal runaway.</strong> Because the nodules would melt the conveyor trays, every pilot test ran as a batch with no material movement. At 140 kW for 60 s the sample fused, and the best run removed 24 wt% against 29.2 wt% total water, likely leaving bound water behind. <em>Next time:</em> keep the material moving while it heats (a continuous line with high-temperature trays, or a rotary setup), with pulsed power control.</li>
+      <li><strong>The equipment was part of the measurement.</strong> Absorbed power reflected how the two generators behaved, not only how the nodules responded: doubling the power raised it from 69.8% to 78.8%, but doubling the time didn't (76.0%). I didn't account for the generator mismatch at first. The second generator is there to excite more cavity modes and heat more evenly, so an imbalance between them undercuts the very uniformity it's meant to give. <em>Next time:</em> set limits for ramp-up time, generator balance and power stability before comparing tests; solid-state generators would remove ramp-up altogether.</li>
+      <li><strong>The bench dose was assumed; the pilot dose was measured.</strong> The bench figure assumed a constant 3.2 kW, all of it delivered. The pilot figure came from logged power, which delivered about 85% of nominal. The direction of the scale-up result holds, but the exact 62.8% carries that uncertainty. <em>Next time:</em> a directional coupler on the bench unit, so both scales are logged the same way.</li>
+    </ol>
+  </div>
+
+  <div class="card" data-toc="Documents &amp; reference">
     <div class="card-head"><span class="label">Documentation</span><span class="soon">Click to open</span></div>
     <p class="fine">My sample calculations, typeset from my hand calcs.</p>
     <div class="doc-grid">
@@ -345,17 +367,8 @@
         <li><a href="https://drive.google.com/file/d/11-HhcpYalRFOzvjBoq9K0dbiG7T5raN9/view">Pilot run video, HMI control</a></li>
       </ul>
   </div>
-  <!-- DRAFT: Daniel to reword these in his own voice before merging -->
-  <div class="card" data-toc="Looking back">
-    <div class="card-head"><span class="label">Looking back</span></div>
-    <ol>
-      <li><strong>Static batches caused thermal runaway.</strong> Because the nodules would melt the conveyor trays, every pilot test ran as a batch with no material movement. At 140 kW for 60 s the sample fused, and the best run removed 24 wt% against 29.2 wt% total water, likely leaving bound water behind. <em>Next time:</em> keep the material moving while it heats (a continuous line with high-temperature trays, or a rotary setup), with pulsed power control.</li>
-      <li><strong>The equipment was part of the measurement.</strong> Absorbed power reflected how the two generators behaved, not only how the nodules responded: doubling the power raised it from 69.8% to 78.8%, but doubling the time didn't (76.0%). I didn't account for the generator mismatch at first. The second generator is there to excite more cavity modes and heat more evenly, so an imbalance between them undercuts the very uniformity it's meant to give. <em>Next time:</em> set limits for ramp-up time, generator balance and power stability before comparing tests; solid-state generators would remove ramp-up altogether.</li>
-      <li><strong>The bench dose was assumed; the pilot dose was measured.</strong> The bench figure assumed a constant 3.2 kW, all of it delivered. The pilot figure came from logged power, which delivered about 85% of nominal. The direction of the scale-up result holds, but the exact 62.8% carries that uncertainty. <em>Next time:</em> a directional coupler on the bench unit, so both scales are logged the same way.</li>
-    </ol>
-  </div>
 
-  <div class="card" data-toc="Reference">
+  <div class="card">
     <div class="card-head"><span class="label">Supervisor recommendation</span></div>
     <figure class="quote">
       <blockquote>“Daniel has excellent communication skills, engages in conversation, and is not afraid to assert his opinion. He has an innate ability for problem solving which was consistently demonstrated throughout his co-op term at Sepro. I am confident that Daniel will shine in any environment, given his highly compatible social skills and teamwork cooperation. Daniel was able to take on new challenges and derive solutions in real-time.”</blockquote>
@@ -369,6 +382,6 @@
 <footer><div class="wrap">
   <a href="mailto:dolaniyan321@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/daniel-olaniyan/">LinkedIn</a> · <a href="https://github.com/DanielOlaniyan">GitHub</a>
 </div></footer>
-<script src="../assets/main.js?v=20261120b"></script>
+<script src="../assets/main.js?v=20261120c"></script>
 </body>
 </html>
